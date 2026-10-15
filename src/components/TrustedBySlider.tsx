@@ -1,183 +1,190 @@
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { ChevronLeft, ChevronRight, MapPin, Package } from 'lucide-react';
+import { ChevronLeft, ChevronRight, MapPin, Package, ExternalLink, ArrowRight, Sparkles } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-interface Partner {
-  name: string;
-  sub: string;
-  city: string;
-  packaging: string;
-  instagram: string;
-  themeColor: string;
-  badgeBg: string;
-  renderLogo: () => React.ReactNode;
-}
+const InstagramIcon: React.FC<{ className?: string }> = ({ className = 'w-3.5 h-3.5' }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+  </svg>
+);
 
 export const TrustedBySlider: React.FC = () => {
   const { t } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
-  const partners: Partner[] = [
+  const partners = [
     {
+      id: 'claes-stroobants',
+      name: 'Claes Stroobants',
+      category: 'Poissonnerie & Traiteur depuis 1960',
+      royalTitle: 'Fournisseur Breveté de la Cour de Belgique',
+      city: 'Bruxelles • Woluwe • Meise • Halles Saint-Géry',
+      packaging: 'Papiers ingraissables, sacs traiteur & barquettes',
+      instagram: '@claesstroobants',
+      instagramUrl: 'https://www.instagram.com/claesstroobants/',
+      accentColor: '#C5A059',
+      bgColor: 'from-slate-900 to-slate-950',
+      textColor: 'text-white',
+      renderLogo: () => (
+        <div className="w-full h-full flex flex-col items-center justify-center p-3 select-none">
+          <svg viewBox="0 0 260 70" className="w-full h-16 object-contain" fill="none">
+            {/* Royal Belgian Crown */}
+            <g transform="translate(108, 2) scale(0.9)">
+              <path d="M24 6L29 16L39 12L34 24H14L9 12L19 16L24 6Z" fill="#C5A059" stroke="#E5C158" strokeWidth="1" />
+              <circle cx="24" cy="5" r="2.5" fill="#E5C158" />
+              <circle cx="9" cy="11" r="2" fill="#E5C158" />
+              <circle cx="39" cy="11" r="2" fill="#E5C158" />
+              <rect x="14" y="23" width="20" height="3" rx="1.5" fill="#C5A059" />
+              <circle cx="24" cy="24.5" r="1" fill="#FFFFFF" />
+            </g>
+            {/* Claes Stroobants Brand Typo */}
+            <text x="130" y="44" textAnchor="middle" fill="#FFFFFF" fontFamily="Georgia, serif" fontSize="18" fontWeight="bold" letterSpacing="2.5">
+              CLAES STROOBANTS
+            </text>
+            {/* Subtitle */}
+            <text x="130" y="58" textAnchor="middle" fill="#C5A059" fontFamily="sans-serif" fontSize="7.5" fontWeight="600" letterSpacing="3">
+              POISSONNERIE • TRAITEUR • DEPUIS 1960
+            </text>
+            <text x="130" y="68" textAnchor="middle" fill="#94A3B8" fontFamily="sans-serif" fontSize="6" fontWeight="500" letterSpacing="1.5">
+              FOURNISSEUR BREVETÉ DE LA COUR
+            </text>
+          </svg>
+        </div>
+      )
+    },
+    {
+      id: 'eatya',
+      name: 'EATYA',
+      category: 'Organic Essentials & Superfoods',
+      royalTitle: 'Meilleur Produit Bio • Vidya & Habebe',
+      city: 'Bruxelles (Molenbeek)',
+      packaging: 'Pochons kraft scellés, boîtes étanches & sachets',
+      instagram: '@eatya.food',
+      instagramUrl: 'https://www.instagram.com/eatya.food/',
+      accentColor: '#10B981',
+      bgColor: 'from-emerald-950 to-slate-900',
+      textColor: 'text-white',
+      renderLogo: () => (
+        <div className="w-full h-full flex flex-col items-center justify-center p-3 select-none">
+          <svg viewBox="0 0 240 70" className="w-full h-16 object-contain" fill="none">
+            {/* Minimalist Organic Brand Typo */}
+            <g transform="translate(30, 10)">
+              <text x="90" y="34" textAnchor="middle" fill="#FFFFFF" fontFamily="'Plus Jakarta Sans', sans-serif" fontSize="32" fontWeight="900" letterSpacing="-1.5">
+                eatya<tspan fill="#10B981">.</tspan>
+              </text>
+              <rect x="30" y="42" width="120" height="1.5" fill="#10B981" rx="0.75" />
+              <text x="90" y="52" textAnchor="middle" fill="#A7F3D0" fontFamily="sans-serif" fontSize="7.5" fontWeight="700" letterSpacing="3">
+                ORGANIC ESSENTIALS • BRUXELLES
+              </text>
+            </g>
+          </svg>
+        </div>
+      )
+    },
+    {
+      id: 'au-vert',
       name: 'Au Vert Brunch',
-      sub: 'Brunch & Specialty Coffee',
+      category: 'Brunch & Specialty Coffee',
+      royalTitle: 'Coffee House & Food Artisans',
       city: 'Bruxelles (Rue de la Madeleine)',
-      packaging: 'Gobelets kraft & boîtes brunch',
+      packaging: 'Gobelets kraft personnalisés & boîtes repas',
       instagram: '@auvertbrunch',
-      themeColor: '#059669',
-      badgeBg: 'bg-emerald-50 text-emerald-800 border-emerald-200',
+      instagramUrl: 'https://www.instagram.com/',
+      accentColor: '#059669',
+      bgColor: 'from-teal-950 to-slate-900',
+      textColor: 'text-white',
       renderLogo: () => (
-        <svg viewBox="0 0 80 80" className="w-16 h-16" fill="none">
-          <circle cx="40" cy="40" r="38" fill="#ECFDF5" stroke="#10B981" strokeWidth="2.5" />
-          <path d="M40 22C40 22 48 30 48 38C48 43 44 47 40 47C36 47 32 43 32 38C32 30 40 22 40 22Z" fill="#059669" />
-          <path d="M40 38V58" stroke="#047857" strokeWidth="3" strokeLinecap="round" />
-          <path d="M40 46C35 44 28 47 28 53" stroke="#047857" strokeWidth="2.5" strokeLinecap="round" />
-          <path d="M40 42C45 40 52 43 52 49" stroke="#047857" strokeWidth="2.5" strokeLinecap="round" />
-        </svg>
+        <div className="w-full h-full flex flex-col items-center justify-center p-3 select-none">
+          <svg viewBox="0 0 240 70" className="w-full h-16 object-contain" fill="none">
+            {/* Sprout & Sun Emblem */}
+            <circle cx="50" cy="35" r="20" fill="#064E3B" stroke="#10B981" strokeWidth="2" />
+            <path d="M50 24C50 24 55 29 55 35C55 38 52 41 50 41C48 41 45 38 45 35C45 29 50 24 50 24Z" fill="#34D399" />
+            <path d="M50 35V45" stroke="#10B981" strokeWidth="2" strokeLinecap="round" />
+            {/* Brand Typo */}
+            <text x="80" y="34" fill="#FFFFFF" fontFamily="'Plus Jakarta Sans', sans-serif" fontSize="22" fontWeight="900" letterSpacing="1">
+              AU VERT
+            </text>
+            <text x="80" y="48" fill="#6EE7B7" fontFamily="sans-serif" fontSize="8" fontWeight="700" letterSpacing="2.5">
+              BRUNCH & SPECIALTY COFFEE
+            </text>
+            <text x="80" y="58" fill="#94A3B8" fontFamily="sans-serif" fontSize="6.5" fontWeight="500" letterSpacing="1">
+              BRUXELLES • RUE DE LA MADELEINE
+            </text>
+          </svg>
+        </div>
       )
     },
     {
-      name: 'Eatya Food',
-      sub: 'Street Food & Smash Burger',
-      city: 'Bruxelles',
-      packaging: 'Boîtes burgers & papier personnalisé',
-      instagram: '@eatya_food',
-      themeColor: '#D97706',
-      badgeBg: 'bg-amber-50 text-amber-900 border-amber-200',
-      renderLogo: () => (
-        <svg viewBox="0 0 80 80" className="w-16 h-16" fill="none">
-          <rect width="80" height="80" rx="18" fill="#FFFBEB" stroke="#F59E0B" strokeWidth="2.5" />
-          {/* Burger bun top */}
-          <path d="M22 36C22 26 30 20 40 20C50 20 58 26 58 36H22Z" fill="#D97706" />
-          {/* Patty */}
-          <rect x="19" y="40" width="42" height="7" rx="3.5" fill="#78350F" />
-          {/* Sauce/Cheese */}
-          <path d="M22 40L26 44L30 40L34 44L38 40L42 44L46 40L50 44L54 40L58 44" stroke="#FBBF24" strokeWidth="3" strokeLinecap="round" />
-          {/* Bun bottom */}
-          <path d="M22 51C22 56 28 58 40 58C52 58 58 56 58 51H22Z" fill="#D97706" />
-        </svg>
-      )
-    },
-    {
+      id: 'tea-with-fati',
       name: 'Tea With Fati',
-      sub: 'Artisanal Tea & Sweet Boxes',
+      category: 'Pâtisserie Fine & Thés Artisanaux',
+      royalTitle: 'Créations Gourmandes',
       city: 'Belgique',
-      packaging: 'Boîtes à pâtisseries & sachets kraft',
+      packaging: 'Boîtes pâtisseries, rubans & sachets kraft',
       instagram: '@teawithfati',
-      themeColor: '#BE185D',
-      badgeBg: 'bg-pink-50 text-pink-900 border-pink-200',
+      instagramUrl: 'https://www.instagram.com/',
+      accentColor: '#EC4899',
+      bgColor: 'from-pink-950 to-slate-900',
+      textColor: 'text-white',
       renderLogo: () => (
-        <svg viewBox="0 0 80 80" className="w-16 h-16" fill="none">
-          <circle cx="40" cy="40" r="38" fill="#FDF2F8" stroke="#F472B6" strokeWidth="2.5" />
-          {/* Teacup & floral steam */}
-          <path d="M26 38C26 49 32 54 40 54C48 54 54 49 54 38H26Z" fill="#BE185D" />
-          <path d="M54 40H58C61 40 63 42 63 45C63 48 61 50 58 50H53" stroke="#BE185D" strokeWidth="2.5" strokeLinecap="round" />
-          <path d="M34 57H46" stroke="#BE185D" strokeWidth="3" strokeLinecap="round" />
-          {/* Steam */}
-          <path d="M35 32C35 27 38 25 38 21" stroke="#F472B6" strokeWidth="2.5" strokeLinecap="round" />
-          <path d="M45 32C45 27 42 25 42 21" stroke="#F472B6" strokeWidth="2.5" strokeLinecap="round" />
-        </svg>
+        <div className="w-full h-full flex flex-col items-center justify-center p-3 select-none">
+          <svg viewBox="0 0 240 70" className="w-full h-16 object-contain" fill="none">
+            {/* Teacup & Rose Flourish */}
+            <circle cx="50" cy="35" r="20" fill="#831843" stroke="#F472B6" strokeWidth="2" />
+            <path d="M42 34C42 41 46 44 50 44C54 44 58 41 58 34H42Z" fill="#F472B6" />
+            <path d="M58 35H60C62 35 63 36 63 38C63 40 62 41 60 41H57" stroke="#F472B6" strokeWidth="1.5" strokeLinecap="round" />
+            <path d="M46 47H54" stroke="#F472B6" strokeWidth="2" strokeLinecap="round" />
+            {/* Brand Typo */}
+            <text x="80" y="34" fill="#FFFFFF" fontFamily="Georgia, serif" fontSize="20" fontWeight="bold" letterSpacing="1.5">
+              TEA WITH FATI
+            </text>
+            <text x="80" y="48" fill="#FBCFE8" fontFamily="sans-serif" fontSize="8" fontWeight="600" letterSpacing="2.5">
+              ARTISANAL SWEETS & TEAS
+            </text>
+            <text x="80" y="58" fill="#94A3B8" fontFamily="sans-serif" fontSize="6.5" fontWeight="500" letterSpacing="1">
+              BELGIQUE
+            </text>
+          </svg>
+        </div>
       )
     },
     {
-      name: 'Stack & Grill',
-      sub: 'Smash Burger Gourmet',
-      city: 'Paris',
-      packaging: 'Boîtes burgers & étuis frites',
-      instagram: '@stackandgrill',
-      themeColor: '#2563EB',
-      badgeBg: 'bg-blue-50 text-blue-900 border-blue-200',
+      id: 'join-us',
+      name: 'Votre Établissement',
+      category: 'Rejoignez nos restaurants partenaires',
+      royalTitle: 'Dès 2 000 pièces • Impression Haute Définition',
+      city: 'Belgique & Europe',
+      packaging: 'Gamme complète à vos couleurs sous 3 à 4 semaines',
+      instagram: '@shapack.be',
+      instagramUrl: 'https://www.instagram.com/shapack.be/',
+      accentColor: '#3B82F6',
+      bgColor: 'from-blue-950 to-slate-900',
+      textColor: 'text-white',
+      isCta: true,
       renderLogo: () => (
-        <svg viewBox="0 0 80 80" className="w-16 h-16" fill="none">
-          <rect width="80" height="80" rx="18" fill="#EFF6FF" stroke="#3B82F6" strokeWidth="2.5" />
-          <path d="M40 18L44 28H54L46 34L49 44L40 38L31 44L34 34L26 28H36L40 18Z" fill="#2563EB" />
-          <path d="M24 50H56" stroke="#1D4ED8" strokeWidth="3.5" strokeLinecap="round" />
-          <path d="M28 58H52" stroke="#1D4ED8" strokeWidth="3.5" strokeLinecap="round" />
-        </svg>
-      )
-    },
-    {
-      name: 'Aura Poké',
-      sub: 'Hawaiian Bowls & Fresh Salads',
-      city: 'Lyon',
-      packaging: 'Saladiers kraft 360° & couvercles',
-      instagram: '@aurapoke',
-      themeColor: '#0D9488',
-      badgeBg: 'bg-teal-50 text-teal-900 border-teal-200',
-      renderLogo: () => (
-        <svg viewBox="0 0 80 80" className="w-16 h-16" fill="none">
-          <circle cx="40" cy="40" r="38" fill="#F0FDFA" stroke="#14B8A6" strokeWidth="2.5" />
-          {/* Bowl & wave */}
-          <path d="M22 42C22 53 30 60 40 60C50 60 58 53 58 42H22Z" fill="#0D9488" />
-          <path d="M20 37C24 35 28 39 32 37C36 35 40 39 44 37C48 35 52 39 56 37C58 36 60 37 60 37" stroke="#14B8A6" strokeWidth="3" strokeLinecap="round" />
-          {/* Chopsticks */}
-          <line x1="28" y1="20" x2="52" y2="44" stroke="#78350F" strokeWidth="2.5" strokeLinecap="round" />
-        </svg>
-      )
-    },
-    {
-      name: 'Green Bean Café',
-      sub: 'Specialty Coffee & Bakery',
-      city: 'Bordeaux',
-      packaging: 'Gobelets double paroi & sacs SOS',
-      instagram: '@greenbeancafe',
-      themeColor: '#4338CA',
-      badgeBg: 'bg-indigo-50 text-indigo-900 border-indigo-200',
-      renderLogo: () => (
-        <svg viewBox="0 0 80 80" className="w-16 h-16" fill="none">
-          <rect width="80" height="80" rx="18" fill="#EEF2FF" stroke="#6366F1" strokeWidth="2.5" />
-          <circle cx="40" cy="38" r="16" stroke="#4338CA" strokeWidth="3" />
-          <path d="M40 26C45 30 45 42 40 48C35 42 35 30 40 26Z" fill="#4338CA" />
-          <path d="M26 60H54" stroke="#4338CA" strokeWidth="3" strokeLinecap="round" />
-        </svg>
-      )
-    },
-    {
-      name: 'Holy Crispy Chicken',
-      sub: 'Fried Chicken & Tenders',
-      city: 'Lille',
-      packaging: 'Boîtes tenders & buckets kraft',
-      instagram: '@holychicken',
-      themeColor: '#EA580C',
-      badgeBg: 'bg-orange-50 text-orange-900 border-orange-200',
-      renderLogo: () => (
-        <svg viewBox="0 0 80 80" className="w-16 h-16" fill="none">
-          <circle cx="40" cy="40" r="38" fill="#FFF7ED" stroke="#FB923C" strokeWidth="2.5" />
-          <path d="M40 18C44 26 48 30 54 34C58 37 58 44 54 48C50 52 46 54 40 58C34 54 30 52 26 48C22 44 22 37 26 34C32 30 36 26 40 18Z" fill="#EA580C" />
-          <path d="M36 36L44 44" stroke="#FFF7ED" strokeWidth="3" strokeLinecap="round" />
-          <path d="M44 36L36 44" stroke="#FFF7ED" strokeWidth="3" strokeLinecap="round" />
-        </svg>
-      )
-    },
-    {
-      name: 'Dark Kitchen Hub',
-      sub: 'Virtual Brands Collective',
-      city: 'Berlin & Bruxelles',
-      packaging: 'Sacs SOS livraison Deliveroo/Uber',
-      instagram: '@darkkitchenhub',
-      themeColor: '#334155',
-      badgeBg: 'bg-slate-100 text-slate-800 border-slate-300',
-      renderLogo: () => (
-        <svg viewBox="0 0 80 80" className="w-16 h-16" fill="none">
-          <rect width="80" height="80" rx="18" fill="#F8FAFC" stroke="#64748B" strokeWidth="2.5" />
-          <polygon points="40,20 62,32 62,56 40,68 18,56 18,32" fill="#0F172A" />
-          <line x1="40" y1="20" x2="40" y2="68" stroke="#38BDF8" strokeWidth="2" />
-          <line x1="18" y1="32" x2="40" y2="44" stroke="#38BDF8" strokeWidth="2" />
-          <line x1="62" y1="32" x2="40" y2="44" stroke="#38BDF8" strokeWidth="2" />
-        </svg>
+        <div className="w-full h-full flex flex-col items-center justify-center p-3 select-none">
+          <div className="w-12 h-12 rounded-2xl bg-blue-600/30 border border-blue-400/50 flex items-center justify-center text-blue-400 mb-1">
+            <Sparkles className="w-6 h-6 animate-pulse" />
+          </div>
+          <span className="text-white font-black text-sm tracking-wide">VOTRE LOGO ICI</span>
+          <span className="text-blue-300 text-[10px] font-semibold mt-0.5">Dès 2 000 pièces</span>
+        </div>
       )
     }
   ];
 
   const total = partners.length;
 
-  // Calmer, slower auto-sliding: advances every 4 seconds (4000ms) with smooth slide-in
+  // Calm, slow automatic slide every 5 seconds
   useEffect(() => {
     if (isPaused) return;
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % total);
-    }, 4000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [isPaused, total]);
@@ -191,111 +198,148 @@ export const TrustedBySlider: React.FC = () => {
   };
 
   return (
-    <section className="py-16 bg-gradient-to-b from-slate-50 via-white to-slate-50 border-y border-slate-200 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 bg-slate-950 text-white relative overflow-hidden">
+      {/* Background glow effects */}
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-emerald-600/10 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
-          <div>
-            <span className="text-xs font-bold uppercase tracking-wider text-blue-600 block mb-1">
-              {t('trusted.title')}
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
+        {/* Header with Title and Nav Controls */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div className="space-y-2">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs font-bold text-blue-400">
+              <span className="w-2 h-2 rounded-full bg-blue-400 animate-ping" />
+              <span>RÉFÉRENCES CLIENTS</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
               Ils emballent avec SHAPACK
             </h2>
-            <p className="text-xs sm:text-sm text-slate-500 mt-1 max-w-xl">
-              {t('trusted.subtitle')} Retrouvez nos collaborations en photo sur Instagram.
+            <p className="text-sm text-slate-400 max-w-xl leading-relaxed">
+              Découvrez nos collaborations avec des établissements de référence en Belgique et en Europe.
             </p>
           </div>
 
           {/* Navigation Controls */}
-          <div className="flex items-center gap-2 self-start md:self-auto">
+          <div className="flex items-center gap-3 self-start md:self-auto">
             <button
               onClick={handlePrev}
-              aria-label="Précédent"
-              className="w-10 h-10 rounded-xl bg-white border border-slate-200 hover:border-blue-500 text-slate-700 hover:text-blue-600 shadow-sm flex items-center justify-center transition-all cursor-pointer active:scale-95"
+              aria-label="Partenaire précédent"
+              className="w-12 h-12 rounded-2xl bg-slate-900 border border-slate-800 hover:border-blue-500/50 hover:bg-slate-800 text-slate-300 hover:text-white flex items-center justify-center transition-all cursor-pointer active:scale-95 shadow-lg"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
             <button
               onClick={handleNext}
-              aria-label="Suivant"
-              className="w-10 h-10 rounded-xl bg-white border border-slate-200 hover:border-blue-500 text-slate-700 hover:text-blue-600 shadow-sm flex items-center justify-center transition-all cursor-pointer active:scale-95"
+              aria-label="Partenaire suivant"
+              className="w-12 h-12 rounded-2xl bg-slate-900 border border-slate-800 hover:border-blue-500/50 hover:bg-slate-800 text-slate-300 hover:text-white flex items-center justify-center transition-all cursor-pointer active:scale-95 shadow-lg"
             >
               <ChevronRight className="w-5 h-5" />
             </button>
           </div>
         </div>
 
-        {/* Carousel Viewport with Smooth Slide-In Animation */}
-        <div 
-          className="relative overflow-hidden"
+        {/* Carousel Slider with Smooth Slide-In Animation */}
+        <div
+          className="relative overflow-hidden -mx-4 px-4 py-2"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
-          {/* Track container */}
-          <div 
-            className="flex transition-transform duration-700 ease-out gap-6"
-            style={{ 
-              transform: `translateX(-${currentIndex * 33.333}%)`
+          <div
+            className="flex transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] gap-6"
+            style={{
+              transform: `translateX(-${currentIndex * (100 / Math.min(total, 3))}%)`
             }}
           >
-            {/* Duplicated list so carousel flows naturally */}
-            {[...partners, ...partners].map((partner, idx) => (
+            {partners.map((partner) => (
               <div
-                key={`${partner.name}-${idx}`}
-                className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] shrink-0 group rounded-2xl bg-white border border-slate-200/90 hover:border-blue-500/80 p-6 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+                key={partner.id}
+                className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] shrink-0 rounded-3xl bg-slate-900/90 border border-slate-800/90 hover:border-slate-700 shadow-2xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between overflow-hidden group"
               >
-                {/* Top: Logo & City */}
-                <div className="flex items-start justify-between gap-4 mb-5">
-                  <div className="p-2 rounded-2xl bg-slate-50 border border-slate-100 group-hover:scale-105 transition-transform duration-300 shrink-0">
+                {/* Upper Brand Showcase: Big High Quality Logo */}
+                <div className={`h-36 bg-gradient-to-br ${partner.bgColor} border-b border-slate-800/80 relative flex items-center justify-center overflow-hidden`}>
+                  {/* Subtle Grid / Texture */}
+                  <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:12px_12px]" />
+                  
+                  {/* High Quality Logo Vector */}
+                  <div className="relative z-10 w-full h-full flex items-center justify-center px-4">
                     {partner.renderLogo()}
                   </div>
-                  <div className="flex flex-col items-end">
-                    <span className="text-[11px] font-semibold text-slate-500 flex items-center gap-1">
-                      <MapPin className="w-3 h-3 text-slate-400" />
-                      <span>{partner.city}</span>
-                    </span>
-                    <a
-                      href="https://instagram.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[11px] font-bold text-pink-600 hover:underline mt-1"
-                    >
-                      {partner.instagram}
-                    </a>
+
+                  {/* Certified badge */}
+                  <div className="absolute top-3 right-3 bg-black/50 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10 text-[10px] font-semibold text-slate-300 flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                    <span>Partenaire</span>
                   </div>
                 </div>
 
-                {/* Middle: Brand Info */}
-                <div className="space-y-1 mb-5">
-                  <h3 className="text-xl font-black text-slate-900 tracking-tight group-hover:text-blue-600 transition-colors">
-                    {partner.name}
-                  </h3>
-                  <p className="text-xs text-slate-500 font-medium">
-                    {partner.sub}
-                  </p>
-                </div>
+                {/* Card Content Body */}
+                <div className="p-6 flex-1 flex flex-col justify-between space-y-5">
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between gap-2">
+                      <h3 className="text-xl font-black text-white tracking-tight group-hover:text-blue-400 transition-colors">
+                        {partner.name}
+                      </h3>
+                      <a
+                        href={partner.instagramUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-pink-600/20 text-slate-400 hover:text-pink-400 border border-slate-700 text-xs font-semibold transition-colors"
+                      >
+                        <InstagramIcon className="w-3 h-3" />
+                        <span>{partner.instagram}</span>
+                        <ExternalLink className="w-2.5 h-2.5 ml-0.5" />
+                      </a>
+                    </div>
 
-                {/* Bottom: Packaging Made */}
-                <div className="pt-3 border-t border-slate-100 flex items-center gap-2 text-xs text-slate-700 font-medium bg-slate-50/70 -mx-6 -mb-6 p-4 rounded-b-2xl">
-                  <Package className="w-3.5 h-3.5 text-blue-600 shrink-0" />
-                  <span className="truncate">{partner.packaging}</span>
+                    <p className="text-xs text-slate-400 font-medium leading-relaxed">
+                      {partner.category}
+                    </p>
+
+                    <div className="inline-block px-2.5 py-1 rounded-md bg-slate-800/80 border border-slate-700/60 text-[11px] font-semibold text-amber-300/90">
+                      {partner.royalTitle}
+                    </div>
+                  </div>
+
+                  {/* City Location */}
+                  <div className="flex items-center gap-1.5 text-xs text-slate-400">
+                    <MapPin className="w-3.5 h-3.5 text-blue-400 shrink-0" />
+                    <span className="truncate">{partner.city}</span>
+                  </div>
+
+                  {/* Packagings Provided */}
+                  <div className="p-3.5 rounded-2xl bg-slate-950/80 border border-slate-800/80 flex items-start gap-2.5 text-xs text-slate-300">
+                    <Package className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
+                    <div>
+                      <span className="text-[10px] uppercase font-bold text-slate-500 block">Packagings fabriqués</span>
+                      <span className="font-medium text-slate-200">{partner.packaging}</span>
+                    </div>
+                  </div>
+
+                  {partner.isCta && (
+                    <Link
+                      to="/contact"
+                      className="w-full py-2.5 px-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs flex items-center justify-center gap-2 transition-colors mt-2"
+                    >
+                      <span>Demander un devis personnalisé</span>
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  )}
                 </div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Progress Bar / Dots */}
-        <div className="flex items-center justify-center gap-2 mt-8">
+        {/* Bottom Pagination Dots */}
+        <div className="flex items-center justify-center gap-2 mt-10">
           {partners.map((_, i) => (
             <button
               key={i}
               onClick={() => setCurrentIndex(i)}
               aria-label={`Aller au partenaire ${i + 1}`}
               className={`h-2 rounded-full transition-all duration-500 cursor-pointer ${
-                currentIndex === i ? 'w-8 bg-blue-600' : 'w-2 bg-slate-200 hover:bg-slate-300'
+                currentIndex === i ? 'w-10 bg-blue-500' : 'w-2 bg-slate-800 hover:bg-slate-700'
               }`}
             />
           ))}
