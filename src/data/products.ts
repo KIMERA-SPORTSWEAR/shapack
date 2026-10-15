@@ -1,0 +1,223 @@
+import { ProductItem } from '../types';
+
+export const PRODUCTS: ProductItem[] = [
+  // --- 1. BOÎTES & ÉTUIS CHAUDS ---
+  {
+    id: 'boite-burger',
+    name: 'Boîtes à Burger Kraft & Carton Blanc',
+    category: 'chaud',
+    categoryLabel: 'Boîtes & Étuis Chauds',
+    subtitle: 'Format standard, double gourmet et smash burger avec aérations vapeur',
+    description: 'La boîte emblématique du street food moderne. Fabriquée en carton kraft rigide ou carton blanc couché. Dotée d\'évents latéraux pour évacuer la vapeur et garder vos burgers bien croustillants.',
+    image: '/images/burger.jpg',
+    dimensions: ['Standard (115 x 115 x 75 mm)', 'Gourmet (125 x 125 x 85 mm)', 'Maxi Smash (140 x 140 x 95 mm)'],
+    materials: ['Carton kraft naturel 300g/m²', 'Carton blanc couché 320g/m²'],
+    moq: '2 000 pièces',
+    leadTime: '3 à 4 semaines',
+    features: ['Impression quadri jusqu\'à 100% de la surface', 'Aérations anti-condensation', 'Barrière anti-gras haute tenue', 'Fermeture à rabat sécurisé']
+  },
+  {
+    id: 'etui-frites',
+    name: 'Étuis à Frites & Finger Food',
+    category: 'chaud',
+    categoryLabel: 'Boîtes & Étuis Chauds',
+    subtitle: 'Cornets et étuis coniques avec fond plat stable',
+    description: 'Étui biseauté facilitant le service rapide au passe. Base plate pour tenir debout sur un plateau ou comptoir. Résistant à l\'huile et aux frites très chaudes.',
+    image: '/images/hero.jpg',
+    dimensions: ['Taille S - 120g', 'Taille M - 180g', 'Taille L - 250g'],
+    materials: ['Carton kraft brun 280g/m²', 'Carton blanc satiné 300g/m²'],
+    moq: '3 000 pièces',
+    leadTime: '3 à 4 semaines',
+    features: ['Découpe biseautée ergonomique', 'Fond plat auto-stable', 'Cartonnette barrière anti-gras']
+  },
+  {
+    id: 'box-wrap',
+    name: 'Box Wraps & Étuis Galettes',
+    category: 'chaud',
+    categoryLabel: 'Boîtes & Étuis Chauds',
+    subtitle: 'Ouverture facile avec bande centrale prédécoupée',
+    description: 'Conçue pour les wraps froids ou toastés, galettes et hot-dogs. Sa bande détachable centrale permet une dégustation nomade propre sans se salir les doigts.',
+    image: '/images/hero.jpg',
+    dimensions: ['Standard (90 x 45 x 200 mm)', 'Maxi (105 x 50 x 240 mm)'],
+    materials: ['Cartonnette kraft 280g/m²', 'Carton blanc'],
+    moq: '2 500 pièces',
+    leadTime: '3 à 4 semaines',
+    features: ['Bande de déchirement rapide Tear-off', 'Conditionnement à plat économique', 'Maintien au chaud']
+  },
+  {
+    id: 'boite-starters',
+    name: 'Boîtes Starters (Tenders, Wings, Nuggets)',
+    category: 'chaud',
+    categoryLabel: 'Boîtes & Étuis Chauds',
+    subtitle: 'Grand format pour finger food à partager',
+    description: 'Boîtes solides avec aérations pour le poulet frit, wings, beignets de fromage et friture à emporter. Fond hermétique retenant l\'huile.',
+    image: '/images/burger.jpg',
+    dimensions: ['500 ml (150 x 100 x 60 mm)', '800 ml (180 x 120 x 70 mm)', 'Family 1200 ml (220 x 140 x 80 mm)'],
+    materials: ['Carton kraft doublé 350g/m²'],
+    moq: '2 000 pièces',
+    leadTime: '3 à 4 semaines',
+    features: ['Aérations vapeur sur le couvercle', 'Fond étanche anti-fuite', 'Parfait pour la livraison à domicile']
+  },
+
+  // --- 2. PLATS & SALADES ---
+  {
+    id: 'saladier-bowl',
+    name: 'Saladiers Ronds / Poke Bowls Kraft',
+    category: 'salades',
+    categoryLabel: 'Plats & Salades',
+    subtitle: 'La référence des poke bars, bars à salades et plats chauds',
+    description: 'Saladier rond en kraft brun ou blanc avec revêtement intérieur étanche aux sauces et vinaigrettes. Disponible avec couvercle transparent rPET ou couvercle kraft.',
+    image: '/images/poke.jpg',
+    dimensions: ['480 ml (16 oz)', '750 ml (26 oz)', '1000 ml (32 oz)', '1300 ml (45 oz)'],
+    materials: ['Carton kraft vergé 300g/m² + enduction étanche'],
+    moq: '2 000 pièces',
+    leadTime: '3 à 4 semaines',
+    features: ['Impression circulaire 360°', 'Bord roulé clipsage hermétique', 'Compatible chaud micro-ondes et froid']
+  },
+  {
+    id: 'pasta-cup',
+    name: 'Boîtes à Pâtes / Pasta Cups',
+    category: 'salades',
+    categoryLabel: 'Plats & Salades',
+    subtitle: 'Gobelet rond haut pour pâtes fraîches en sauce et wok',
+    description: 'Format idéal pour pâtes italiennes, nouilles sautées et ramen. Fond thermosoudé anti-fuite même pour les sauces abondantes.',
+    image: '/images/poke.jpg',
+    dimensions: ['480 ml (16 oz)', '750 ml (26 oz)', '1000 ml (32 oz)'],
+    materials: ['Carton kraft 320g/m²', 'Carton blanc contact alimentaire'],
+    moq: '2 500 pièces',
+    leadTime: '3 à 4 semaines',
+    features: ['Fond étanche soudé par ultrasons', 'Tenue thermique prolongée', 'Couvercle ventilé disponible']
+  },
+  {
+    id: 'noodle-box',
+    name: 'Boîtes à Riz & Noodle Boxes Pliantes',
+    category: 'salades',
+    categoryLabel: 'Plats & Salades',
+    subtitle: 'Boîte pagode asiatique avec fermeture monobloc à rabats',
+    description: 'La boîte pagode traditionnelle américaine / asiatique. Pas besoin de couvercle séparé : les 4 rabats se replient pour fermer la boîte de façon hermétique.',
+    image: '/images/poke.jpg',
+    dimensions: ['500 ml (16 oz)', '750 ml (26 oz)', '1000 ml (32 oz)'],
+    materials: ['Carton kraft doublé intérieur'],
+    moq: '2 500 pièces',
+    leadTime: '3 à 4 semaines',
+    features: ['Fermeture sans couvercle plastique', 'Coins pliés étanches', 'Se déplie en assiette']
+  },
+
+  // --- 3. BOULANGERIE & SANDWICHES ---
+  {
+    id: 'boite-sandwich',
+    name: 'Boîtes à Sandwichs Triangle à Fenêtre',
+    category: 'boulangerie',
+    categoryLabel: 'Boulangerie & Sandwiches',
+    subtitle: 'Pour sandwichs club et triangles avec fenêtre transparente',
+    description: 'Emballage incontournable des corners boulangerie, snacking et coffee shops. La fenêtre met en valeur la fraîcheur des garnitures en vitrine.',
+    image: '/images/bakery.jpg',
+    dimensions: ['Double Club (123 x 72 x 123 mm)', 'Triple Gourmand (123 x 85 x 123 mm)'],
+    materials: ['Carton kraft 280g/m² + film transparent cellulose'],
+    moq: '3 000 pièces',
+    leadTime: '3 à 4 semaines',
+    features: ['Fenêtre transparente végétale', 'Mise en valeur visuelle au comptoir', 'Fermeture arrière sécurisée']
+  },
+  {
+    id: 'etui-panini',
+    name: 'Étuis Ouverts Paninis & Hot-Dogs',
+    category: 'boulangerie',
+    categoryLabel: 'Boulangerie & Sandwiches',
+    subtitle: 'Pochette de dégustation nomade pour sandwichs chauds',
+    description: 'Cartonnette isolante pour servir paninis toastés, demi-baguettes et hot-dogs sans se brûler les mains et en retenant le fromage fondu.',
+    image: '/images/bakery.jpg',
+    dimensions: ['Panini (190 x 70 x 40 mm)', 'Demi-baguette (240 x 75 x 45 mm)'],
+    materials: ['Carton kraft anti-graisse 260g/m²'],
+    moq: '3 000 pièces',
+    leadTime: '3 à 4 semaines',
+    features: ['Absorption des graisses', 'Prise en main immédiate au comptoir']
+  },
+  {
+    id: 'sachet-viennoiserie',
+    name: 'Sacs à Viennoiseries & Pâtisseries',
+    category: 'boulangerie',
+    categoryLabel: 'Boulangerie & Sandwiches',
+    subtitle: 'Sachets papier kraft avec soufflets latéraux',
+    description: 'Sachets légers et résistants pour croissants, pains au chocolat et biscuits. Papier respirant qui préserve le croustillant des viennoiseries.',
+    image: '/images/bakery.jpg',
+    dimensions: ['Petit (140 x 200 mm)', 'Moyen (180 x 280 mm)', 'Grand (220 x 340 mm)'],
+    materials: ['Papier kraft brun ou blanc 45g/m²'],
+    moq: '5 000 pièces',
+    leadTime: '3 à 4 semaines',
+    features: ['Papier kraft respirant', 'Impression logo personnalisé', 'Soufflets latéraux volumineux']
+  },
+
+  // --- 4. SACS & TRANSPORT ---
+  {
+    id: 'sac-cabas-torsade',
+    name: 'Sacs Cabas Kraft Poignées Torsadées (Fond Large)',
+    category: 'sacs',
+    categoryLabel: 'Sacs & Transport',
+    subtitle: 'Fond extra-large spécial boîtes burgers et plats transportés à plat',
+    description: 'Le sac de vente à emporter idéal pour la restauration. Son soufflet de fond large permet de caler boîtes et bowls parfaitement à plat sans renversement. Poignées torsadées renforcées supportant 6 kg.',
+    image: '/images/hero.jpg',
+    dimensions: ['Moyen (260 x 170 x 290 mm)', 'Grand fond large (320 x 215 x 300 mm)', 'Maxi XL (360 x 240 x 360 mm)'],
+    materials: ['Papier kraft vergé 90g à 110g/m²'],
+    moq: '2 000 pièces',
+    leadTime: '3 à 4 semaines',
+    features: ['Fond large anti-renversement', 'Poignées torsadées robustes (6 kg)', 'Impression intégrale quadri 4 faces']
+  },
+  {
+    id: 'sac-sos-dark-kitchen',
+    name: 'Sacs SOS Kraft Sans Poignées (Livraison)',
+    category: 'sacs',
+    categoryLabel: 'Sacs & Transport',
+    subtitle: 'Le sac optimisé pour Deliveroo, Uber Eats et dark kitchens',
+    description: 'Sac à fond plat carré sans poignées. Les restaurateurs le ferment en roulant le haut avec une étiquette adhésive de scellé. Très rapide à emballer et facile à glisser dans les sacs de livraison.',
+    image: '/images/hero.jpg',
+    dimensions: ['Format 10L (260 x 140 x 320 mm)', 'Format 15L (320 x 160 x 400 mm)'],
+    materials: ['Papier kraft épais résistant 80g/m²'],
+    moq: '2 500 pièces',
+    leadTime: '3 à 4 semaines',
+    features: ['Fond carré tenant debout seul', 'Facile à sceller avec autocollant', 'Parfait pour livreurs en 2 roues']
+  },
+
+  // --- 5. GOBELETS & ACCESSOIRES ---
+  {
+    id: 'gobelet-double-paroi',
+    name: 'Gobelets Kraft Double Paroi Boissons Chaudes & Froides',
+    category: 'gobelets',
+    categoryLabel: 'Gobelets & Accessoires',
+    subtitle: 'Isolation thermique supérieure pour café, thé et chocolat',
+    description: 'Gobelet carton avec double paroi d\'air isolante. Permet de tenir la boisson très chaude en main sans aucune brûlure et sans manchon supplémentaire.',
+    image: '/images/bakery.jpg',
+    dimensions: ['120 ml (4 oz - Espresso)', '240 ml (8 oz)', '350 ml (12 oz)', '470 ml (16 oz)'],
+    materials: ['Carton kraft double paroi 280g + 250g/m²'],
+    moq: '3 000 pièces',
+    leadTime: '3 à 4 semaines',
+    features: ['Isolation thermique double paroi', 'Impression 360° haute définition', 'Couvercles assortis disponibles']
+  },
+  {
+    id: 'papier-ingraissable',
+    name: 'Papier Ingraissable Burger Personnalisé',
+    category: 'gobelets',
+    categoryLabel: 'Gobelets & Accessoires',
+    subtitle: 'Impression en continu de votre logo sur papier burger',
+    description: 'Papier sulfurisé ingraissable pour envelopper smash burgers, habiller les paniers de frites et protéger les plateaux. Barrière totale aux huiles et sauces.',
+    image: '/images/burger.jpg',
+    dimensions: ['Feuille 300 x 400 mm', 'Feuille 330 x 330 mm', 'Rouleau découpe personnalisée'],
+    materials: ['Véritable papier kraft blanc ou écru ingraissable 40g/m²'],
+    moq: '5 000 feuilles',
+    leadTime: '2 à 3 semaines',
+    features: ['100% résistant aux graisses et vapeur', 'Impression logo en continu', 'Toucher authentique street food']
+  },
+  {
+    id: 'serviettes-papier',
+    name: 'Serviettes en Papier Ouate Personnalisées',
+    category: 'gobelets',
+    categoryLabel: 'Gobelets & Accessoires',
+    subtitle: 'Ouate gaufrée 2 plis avec logo imprimé',
+    description: 'Serviettes pour restaurants, bars et food trucks. Formats cocktail, déjeuner ou dîner. Grande douceur et absorption.',
+    image: '/images/burger.jpg',
+    dimensions: ['Cocktail (20 x 20 cm)', 'Snack / Déjeuner (33 x 33 cm)', 'Grand format (40 x 40 cm)'],
+    materials: ['Pure ouate de cellulose 2 plis 34g/m²'],
+    moq: '5 000 pièces',
+    leadTime: '2 à 3 semaines',
+    features: ['Ouate douce et absorbante', 'Pliage distributeur 1/4 ou 1/8', 'Impression 1 à 2 couleurs nette']
+  }
+];
