@@ -12,14 +12,6 @@ const InstagramIcon: React.FC<{ className?: string }> = ({ className = 'w-4 h-4'
   </svg>
 );
 
-const LinkedinIcon: React.FC<{ className?: string }> = ({ className = 'w-4 h-4' }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-    <rect width="4" height="12" x="2" y="9"/>
-    <circle cx="4" cy="4" r="2"/>
-  </svg>
-);
-
 export const Footer: React.FC = () => {
   const { t } = useLanguage();
 
@@ -74,22 +66,13 @@ export const Footer: React.FC = () => {
             {/* Social Icons */}
             <div className="pt-2 flex items-center gap-3">
               <a
-                href="https://www.instagram.com/shapack.be/"
+                href="https://www.instagram.com/shapack.ig/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 rounded-lg bg-slate-800 hover:bg-pink-600 text-slate-300 hover:text-white flex items-center justify-center transition-colors"
-                title="Instagram @shapack.be"
+                title="Instagram @shapack.ig"
               >
                 <InstagramIcon className="w-4 h-4" />
-              </a>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-8 h-8 rounded-lg bg-slate-800 hover:bg-blue-600 text-slate-300 hover:text-white flex items-center justify-center transition-colors"
-                title="LinkedIn SHAPACK"
-              >
-                <LinkedinIcon className="w-4 h-4" />
               </a>
             </div>
           </div>
@@ -108,11 +91,6 @@ export const Footer: React.FC = () => {
               <li>
                 <Link to="/produits" className="hover:text-blue-400 transition-colors">
                   {t('nav.products')}
-                </Link>
-              </li>
-              <li>
-                <Link to="/realisations" className="hover:text-blue-400 transition-colors">
-                  {t('nav.portfolio')}
                 </Link>
               </li>
               <li>
@@ -175,13 +153,13 @@ export const Footer: React.FC = () => {
               </a>
 
               <a 
-                href="mailto:contact@shapack.be"
+                href="mailto:hello@shapack.be"
                 className="p-3 rounded-lg bg-slate-800 border border-slate-700 block hover:border-blue-500 transition-colors"
               >
                 <span className="text-[10px] text-slate-400 block">Email :</span>
                 <span className="text-xs font-bold text-white flex items-center gap-1.5 mt-0.5">
                   <Mail className="w-3.5 h-3.5 text-blue-400" />
-                  contact@shapack.be
+                  hello@shapack.be
                 </span>
               </a>
             </div>

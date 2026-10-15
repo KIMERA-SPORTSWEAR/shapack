@@ -24,16 +24,16 @@ const translations: Record<Language, Record<string, string>> = {
     // Hero
     'hero.badge': 'Basé à Bruxelles • Fabricant B2B Restauration',
     'hero.title1': 'Vos emballages personnalisés',
-    'hero.title2': 'dès 2 000 pièces',
+    'hero.title2': 'sur-mesure',
     'hero.subtitle': 'Boîtes burgers, poke bowls, étuis à frites, sacs kraft et gobelets imprimés à vos couleurs. Entreprise basée à Bruxelles, livraison rapide en Belgique et dans toute l\'Europe.',
     'hero.reassurance1': 'Devis gratuit sous 24h',
-    'hero.reassurance2': 'Petites séries dès 2 000 pièces',
+    'hero.reassurance2': 'Quantités flexibles sur-mesure',
     'hero.reassurance3': 'Impression offset haute définition',
     'hero.reassurance4': 'Carton kraft et blanc recyclable',
     'hero.btnQuote': 'Demander un Devis en 24h',
     'hero.btnCatalog': 'Consulter le Catalogue',
     'hero.badgeOffset': 'Impression Offset',
-    'hero.badgeMoq': 'Dès 2 000 pcs',
+    'hero.badgeMoq': 'Sur Devis',
 
     // Trusted By
     'trusted.title': 'Ils nous font confiance à Bruxelles et en Belgique',
@@ -44,9 +44,9 @@ const translations: Record<Language, Record<string, string>> = {
     'pillars.subtitle': 'Des emballages solides, personnalisés et livrés rapidement.',
     'pillars.p1Title': 'Impression sur-mesure',
     'pillars.p1Desc': 'Impression offset de votre logo, visuels et couleurs sur tous vos contenants.',
-    'pillars.p2Title': 'Accessible dès 2 000 pièces',
-    'pillars.p2Badge': 'Accessible',
-    'pillars.p2Desc': 'Des quantités réalistes adaptées aux restaurants indépendants comme aux réseaux.',
+    'pillars.p2Title': 'Quantités adaptées & flexibles',
+    'pillars.p2Badge': 'Sur-mesure',
+    'pillars.p2Desc': 'Production personnalisée adaptée aux restaurants indépendants comme aux enseignes multi-sites.',
     'pillars.p2Link': 'Voir les produits',
     'pillars.p3Title': 'Qualité alimentaire et écologie',
     'pillars.p3Desc': 'Cartons kraft et blancs rigides, barrière anti-gras et contact alimentaire certifié.',
@@ -78,9 +78,9 @@ const translations: Record<Language, Record<string, string>> = {
     'process.s3Desc': 'Impression, façonnage et livraison directe dans votre établissement.',
 
     // Conditions
-    'conditions.moqLabel': 'Quantité minimum',
-    'conditions.moqVal': 'Dès 2 000 pièces',
-    'conditions.moqSub': 'Adapté pour démarrer facilement.',
+    'conditions.moqLabel': 'Devis & Quantités',
+    'conditions.moqVal': 'Sur Devis',
+    'conditions.moqSub': 'Adapté à votre activité sans contrainte.',
     'conditions.timeLabel': 'Délai de fabrication',
     'conditions.timeVal': '3 à 4 semaines',
     'conditions.timeSub': 'Fabrication soignée et livraison suivie.',
@@ -92,7 +92,7 @@ const translations: Record<Language, Record<string, string>> = {
     'social.tag': 'Instagram',
     'social.title': 'Dernières réalisations',
     'social.subtitle': 'Retrouvez nos emballages en situation chez nos restaurants partenaires.',
-    'social.btn': 'Suivre @shapack.be',
+    'social.btn': 'Suivre @shapack.ig',
 
     // Portfolio Page
     'portfolio.tag': 'Réalisations',
@@ -136,7 +136,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Footer
     'footer.ctaTitle': 'Prêt à lancer vos emballages personnalisés ?',
-    'footer.ctaSubtitle': 'Devis clair sous 24h ouvrées. Minimums accessibles dès 2 000 pièces.',
+    'footer.ctaSubtitle': 'Devis clair et chiffré remis sous 24h ouvrées.',
     'footer.ctaBtn': 'Demander un devis',
     'footer.about': 'Fabricant et distributeur d\'emballages alimentaires personnalisés basé à Bruxelles. Livraison rapide en Belgique et dans toute l\'Europe.',
     'footer.nav': 'Navigation',
@@ -163,16 +163,16 @@ const translations: Record<Language, Record<string, string>> = {
     // Hero
     'hero.badge': 'Based in Brussels • B2B Foodservice Packaging',
     'hero.title1': 'Custom food packaging',
-    'hero.title2': 'from 2,000 pieces',
-    'hero.subtitle': 'Custom-printed burger boxes, poke bowls, fries sleeves, kraft bags and cups. Based in Brussels, with fast delivery across Belgium and Europe from 2,000 pcs.',
+    'hero.title2': 'tailor-made',
+    'hero.subtitle': 'Custom-printed burger boxes, poke bowls, fries sleeves, kraft bags and cups. Based in Brussels, with fast delivery across Belgium and Europe.',
     'hero.reassurance1': 'Free quote within 24 hours',
-    'hero.reassurance2': 'Accessible runs from 2,000 pcs',
+    'hero.reassurance2': 'Flexible custom order quantities',
     'hero.reassurance3': 'High-definition offset printing',
     'hero.reassurance4': 'Recyclable kraft and white board',
     'hero.btnQuote': 'Get a Quote in 24h',
     'hero.btnCatalog': 'Browse Catalog',
     'hero.badgeOffset': 'Offset Printing',
-    'hero.badgeMoq': 'From 2,000 pcs',
+    'hero.badgeMoq': 'Custom Quote',
 
     // Trusted By
     'trusted.title': 'Trusted in Brussels and across Belgium',
@@ -183,9 +183,9 @@ const translations: Record<Language, Record<string, string>> = {
     'pillars.subtitle': 'Sturdy, branded packagings delivered directly to your kitchen.',
     'pillars.p1Title': 'Full Custom Print',
     'pillars.p1Desc': 'High-precision offset printing of your logo, brand colors and visual identity on every box.',
-    'pillars.p2Title': 'Accessible from 2,000 pcs',
-    'pillars.p2Badge': 'Accessible',
-    'pillars.p2Desc': 'Realistic minimum quantities designed for independent restaurants and growing chains alike.',
+    'pillars.p2Title': 'Flexible Quantities',
+    'pillars.p2Badge': 'Tailored',
+    'pillars.p2Desc': 'Flexible order sizes tailored for independent restaurants and growing chains alike.',
     'pillars.p2Link': 'View products',
     'pillars.p3Title': 'Certified Food Safety',
     'pillars.p3Desc': 'Rigid kraft and white boards with certified greaseproof barriers for direct hot food contact.',
@@ -217,9 +217,9 @@ const translations: Record<Language, Record<string, string>> = {
     'process.s3Desc': 'Offset printing, folding, and direct tracked delivery to your restaurant.',
 
     // Conditions
-    'conditions.moqLabel': 'Minimum order',
-    'conditions.moqVal': 'From 2,000 pcs',
-    'conditions.moqSub': 'Convenient for launches and regular runs.',
+    'conditions.moqLabel': 'Quote & Quantities',
+    'conditions.moqVal': 'Custom Quote',
+    'conditions.moqSub': 'Tailored to your needs without constraint.',
     'conditions.timeLabel': 'Lead time',
     'conditions.timeVal': '3 to 4 weeks',
     'conditions.timeSub': 'High-precision production and tracked shipment.',
@@ -231,7 +231,7 @@ const translations: Record<Language, Record<string, string>> = {
     'social.tag': 'Instagram',
     'social.title': 'Recent Packaging Runs',
     'social.subtitle': 'See custom packagings live in action at our partner restaurants.',
-    'social.btn': 'Follow @shapack.be',
+    'social.btn': 'Follow @shapack.ig',
 
     // Portfolio Page
     'portfolio.tag': 'Portfolio',
@@ -275,7 +275,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Footer
     'footer.ctaTitle': 'Ready to start your custom packaging?',
-    'footer.ctaSubtitle': 'Fast quote within 24 hours. Accessible from 2,000 pcs.',
+    'footer.ctaSubtitle': 'Clear and detailed quote within 24 business hours.',
     'footer.ctaBtn': 'Get your quote',
     'footer.about': 'Custom food packaging manufacturer based in Brussels. Fast delivery across Belgium and Europe.',
     'footer.nav': 'Navigation',
@@ -302,16 +302,16 @@ const translations: Record<Language, Record<string, string>> = {
     // Hero
     'hero.badge': 'Mit Sitz in Brüssel • B2B Gastronomie Verpackungen',
     'hero.title1': 'Individuelle Gastronomieverpackungen',
-    'hero.title2': 'ab 2.000 Stück',
+    'hero.title2': 'nach Maß',
     'hero.subtitle': 'Burgerboxen, Poke Bowls, Pommestüten, Kraftpapiertüten und Becher in Ihrem Design. Mit Sitz in Brüssel, schnelle Lieferung in Belgien und ganz Europa.',
     'hero.reassurance1': 'Kostenloses Angebot innerhalb von 24h',
-    'hero.reassurance2': 'Kleine Serien ab 2.000 Stück',
+    'hero.reassurance2': 'Flexible Bestellmengen nach Maß',
     'hero.reassurance3': 'Hochauflösender Offsetdruck',
     'hero.reassurance4': 'Recycelbarer Kraft- und Weißkarton',
     'hero.btnQuote': 'Angebot in 24h anfordern',
     'hero.btnCatalog': 'Katalog ansehen',
     'hero.badgeOffset': 'Offsetdruck',
-    'hero.badgeMoq': 'Ab 2.000 Stück',
+    'hero.badgeMoq': 'Auf Anfrage',
 
     // Trusted By
     'trusted.title': 'Partnerbetriebe in Brüssel und Belgien',
@@ -322,9 +322,9 @@ const translations: Record<Language, Record<string, string>> = {
     'pillars.subtitle': 'Stabile, markenindividuelle Verpackungen direkt in Ihren Betrieb geliefert.',
     'pillars.p1Title': 'Kompletter individueller Druck',
     'pillars.p1Desc': 'Offsetdruck Ihres Logos, Ihrer Farben und Schriften auf all Ihren Verpackungen.',
-    'pillars.p2Title': 'Bereits ab 2.000 Stück',
-    'pillars.p2Badge': 'Zugänglich',
-    'pillars.p2Desc': 'Wirtschaftliche Mindestmengen für Einzelgastronomen und Ketten.',
+    'pillars.p2Title': 'Flexible Bestellmengen',
+    'pillars.p2Badge': 'Flexibel',
+    'pillars.p2Desc': 'Wirtschaftliche Mengen angepasst an Einzelgastronomen und Ketten.',
     'pillars.p2Link': 'Produkte ansehen',
     'pillars.p3Title': 'Zertifizierte Lebensmittelechtheit',
     'pillars.p3Desc': 'Fettbeständiger, stabiler Kraftkarton für warme und fettige Speisen.',
@@ -356,9 +356,9 @@ const translations: Record<Language, Record<string, string>> = {
     'process.s3Desc': 'Offsetfertigung und direkte Anlieferung an Ihren Standort.',
 
     // Conditions
-    'conditions.moqLabel': 'Mindestmenge',
-    'conditions.moqVal': 'Ab 2.000 Stück',
-    'conditions.moqSub': 'Ideal zum einfachen Einstieg.',
+    'conditions.moqLabel': 'Mengen & Angebot',
+    'conditions.moqVal': 'Auf Anfrage',
+    'conditions.moqSub': 'Flexibel an Ihren Bedarf angepasst.',
     'conditions.timeLabel': 'Produktionszeit',
     'conditions.timeVal': '3 bis 4 Wochen',
     'conditions.timeSub': 'Sorgfältige Fertigung und Sendungsverfolgung.',
@@ -370,7 +370,7 @@ const translations: Record<Language, Record<string, string>> = {
     'social.tag': 'Instagram',
     'social.title': 'Aktuelle Arbeiten',
     'social.subtitle': 'Verpackungen im Praxiseinsatz unserer Gastro-Partner.',
-    'social.btn': 'Folgen auf @shapack.be',
+    'social.btn': 'Folgen auf @shapack.ig',
 
     // Portfolio Page
     'portfolio.tag': 'Referenzen',
@@ -414,7 +414,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Footer
     'footer.ctaTitle': 'Bereit für Ihre eigenen Verpackungen?',
-    'footer.ctaSubtitle': 'Angebot innerhalb von 24h. Ab 2.000 Stück verfügbar.',
+    'footer.ctaSubtitle': 'Detailliertes Angebot in 24h.',
     'footer.ctaBtn': 'Angebot anfordern',
     'footer.about': 'Hersteller für individuelle Gastronomieverpackungen mit Sitz in Brüssel. Schnelle Lieferung in Belgien und Europa.',
     'footer.nav': 'Navigation',
@@ -441,16 +441,16 @@ const translations: Record<Language, Record<string, string>> = {
     // Hero
     'hero.badge': 'Gevestigd in Brussel • B2B Horeca Verpakkingen',
     'hero.title1': 'Bedrukte voedselverpakkingen',
-    'hero.title2': 'vanaf 2.000 stuks',
-    'hero.subtitle': 'Burgerboxen, poke bowls, frietzakjes, krafttassen en bekers in uw eigen huisstijl. Gevestigd in Brussel, snelle levering in België en Europa vanaf 2.000 stuks.',
+    'hero.title2': 'op maat',
+    'hero.subtitle': 'Burgerboxen, poke bowls, frietzakjes, krafttassen en bekers in uw eigen huisstijl. Gevestigd in Brussel, snelle levering in België en Europa.',
     'hero.reassurance1': 'Gratis offerte binnen 24 uur',
-    'hero.reassurance2': 'Kleine oplages vanaf 2.000 stuks',
+    'hero.reassurance2': 'Flexibele bestelhoeveelheden op maat',
     'hero.reassurance3': 'Offsetdruk van hoge kwaliteit',
     'hero.reassurance4': 'Recyclebaar kraft en wit karton',
     'hero.btnQuote': 'Offerte aanvragen in 24u',
     'hero.btnCatalog': 'Bekijk de Catalogus',
     'hero.badgeOffset': 'Offsetdruk',
-    'hero.badgeMoq': 'Vanaf 2.000 stuks',
+    'hero.badgeMoq': 'Op Offerte',
 
     // Trusted By
     'trusted.title': 'Zij vertrouwen op ons in Brussel en België',
@@ -461,9 +461,9 @@ const translations: Record<Language, Record<string, string>> = {
     'pillars.subtitle': 'Stevige, bedrukte verpakkingen direct aan uw zaak geleverd.',
     'pillars.p1Title': 'Bedrukking op maat',
     'pillars.p1Desc': 'Offsetdruk van uw logo, kleuren en huisstijl op al uw verpakkingen.',
-    'pillars.p2Title': 'Toegankelijk vanaf 2.000 stuks',
-    'pillars.p2Badge': 'Toegankelijk',
-    'pillars.p2Desc': 'Realistische minimumhoeveelheden voor zowel zelfstandigen als ketens.',
+    'pillars.p2Title': 'Flexibele Aantallen',
+    'pillars.p2Badge': 'Op Maat',
+    'pillars.p2Desc': 'Flexibele bestelhoeveelheden voor zowel zelfstandigen als ketens.',
     'pillars.p2Link': 'Bekijk producten',
     'pillars.p3Title': 'Voedselveilig en gecertificeerd',
     'pillars.p3Desc': 'Vetbestendig kraft- en witkarton, gecertificeerd voor direct contact met warm eten.',
@@ -495,9 +495,9 @@ const translations: Record<Language, Record<string, string>> = {
     'process.s3Desc': 'Offsetdruk, afwerking en rechtstreekse levering met tracking.',
 
     // Conditions
-    'conditions.moqLabel': 'Minimale afname',
-    'conditions.moqVal': 'Vanaf 2.000 stuks',
-    'conditions.moqSub': 'Ideaal om vlot te starten.',
+    'conditions.moqLabel': 'Offerte & Aantallen',
+    'conditions.moqVal': 'Op Offerte',
+    'conditions.moqSub': 'Flexibel afgestemd op uw zaak.',
     'conditions.timeLabel': 'Productietijd',
     'conditions.timeVal': '3 tot 4 weken',
     'conditions.timeSub': 'Zorgvuldige productie en betrouwbare verzending.',
@@ -509,7 +509,7 @@ const translations: Record<Language, Record<string, string>> = {
     'social.tag': 'Instagram',
     'social.title': 'Recente realisaties',
     'social.subtitle': 'Bekijk onze verpakkingen in de praktijk bij aangesloten horecazaken.',
-    'social.btn': 'Volg @shapack.be',
+    'social.btn': 'Volg @shapack.ig',
 
     // Portfolio Page
     'portfolio.tag': 'Realisaties',
@@ -553,7 +553,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Footer
     'footer.ctaTitle': 'Klaar om uw eigen verpakkingen te bedrukken?',
-    'footer.ctaSubtitle': 'Offerte binnen 24u. Toegankelijk vanaf 2.000 stuks.',
+    'footer.ctaSubtitle': 'Duidelijke offerte binnen 24u.',
     'footer.ctaBtn': 'Vraag een offerte aan',
     'footer.about': 'Fabrikant van bedrukte voedselverpakkingen gevestigd in Brussel. Snelle levering in België en Europa.',
     'footer.nav': 'Navigatie',

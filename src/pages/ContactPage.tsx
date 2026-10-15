@@ -97,7 +97,7 @@ export const ContactPage: React.FC = () => {
                 </a>
 
                 <a 
-                  href="mailto:contact@shapack.be" 
+                  href="mailto:hello@shapack.be" 
                   className="flex items-center gap-3 p-3 rounded-xl bg-white border border-slate-200 hover:border-blue-500 transition-colors"
                 >
                   <div className="w-9 h-9 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
@@ -105,7 +105,7 @@ export const ContactPage: React.FC = () => {
                   </div>
                   <div>
                     <span className="text-xs text-slate-400 block">{t('contact.emailLabel')}</span>
-                    <span className="font-bold text-slate-900">contact@shapack.be</span>
+                    <span className="font-bold text-slate-900">hello@shapack.be</span>
                   </div>
                 </a>
 
@@ -225,7 +225,7 @@ export const ContactPage: React.FC = () => {
                     onChange={(e) => setVolume(e.target.value)}
                     className="w-full px-3 py-2 rounded-lg border border-slate-300 bg-white text-xs text-slate-800 font-medium focus:outline-none focus:border-blue-600"
                   >
-                    <option value="Petite série (test ou démarrage)">Petite série (avec ou sans minimum selon modèle)</option>
+                    <option value="Petite série (test ou démarrage)">Petite série / Sur-mesure</option>
                     <option value="2 500 à 5 000 pièces">2 500 à 5 000 pièces</option>
                     <option value="10 000 pièces">10 000 pièces (tarif dégressif)</option>
                     <option value="20 000+ pièces">20 000+ pièces (multi-sites / chaînes)</option>
