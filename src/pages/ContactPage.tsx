@@ -57,20 +57,21 @@ export const ContactPage: React.FC = () => {
     try {
       const formData = new FormData();
       formData.append('access_key', 'cd32f65f-e9b0-41ea-8d78-7d1a5964789f');
-      formData.append('subject', `Demande de Devis SHAPACK - ${restaurantName || 'Restaurant'} (Réf: ${generatedRef})`);
-      formData.append('from_name', 'SHAPACK Website');
+      formData.append('subject', `📦 Devis SHAPACK - ${restaurantName || 'Restaurant'} [${generatedRef}]`);
+      formData.append('from_name', 'SHAPACK Devis (Bruxelles)');
       formData.append('replyto', email);
 
-      formData.append('Référence Devis', generatedRef);
-      formData.append('Nom Restaurant / Établissement', restaurantName);
-      formData.append('Nom du Contact', contactName);
-      formData.append('Email professionnel', email);
-      formData.append('Téléphone direct', phone);
-      formData.append('Ville / Localisation', city || 'Non précisée');
-      formData.append('Packagings sélectionnés', selectedTypes.join(', '));
-      formData.append('Volume estimé', volume);
+      // Clés sans accents pour garantir un affichage parfait dans l'email sans caractères corrompus (RÃ©fÃ©rence...)
+      formData.append('Reference_Devis', generatedRef);
+      formData.append('Restaurant_Etablissement', restaurantName);
+      formData.append('Nom_du_Contact', contactName);
+      formData.append('Email_Client', email);
+      formData.append('Telephone_Direct', phone);
+      formData.append('Ville_Localisation', city || 'Bruxelles');
+      formData.append('Packagings_Demandes', selectedTypes.join(', '));
+      formData.append('Volume_Estime', volume);
       if (message) {
-        formData.append('Message & Détails', message);
+        formData.append('Message_Client', message);
       }
       if (logoFile) {
         formData.append('attachment', logoFile);
@@ -346,7 +347,7 @@ export const ContactPage: React.FC = () => {
                         required
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
-                        placeholder="+33 6 XX XX XX XX"
+                        placeholder="+32 4XX XX XX XX"
                         className="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs text-slate-800 focus:outline-none focus:border-blue-600"
                       />
                     </div>
