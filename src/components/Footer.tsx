@@ -66,11 +66,11 @@ export const Footer: React.FC = () => {
             {/* Social Icons */}
             <div className="pt-2 flex items-center gap-3">
               <a
-                href="https://www.instagram.com/shapack.ig/"
+                href="https://www.instagram.com/shapack.be/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 rounded-lg bg-slate-800 hover:bg-pink-600 text-slate-300 hover:text-white flex items-center justify-center transition-colors"
-                title="Instagram @shapack.ig"
+                title="Instagram @shapack.be"
               >
                 <InstagramIcon className="w-4 h-4" />
               </a>

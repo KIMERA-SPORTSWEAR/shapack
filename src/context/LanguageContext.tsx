@@ -92,7 +92,7 @@ const translations: Record<Language, Record<string, string>> = {
     'social.tag': 'Instagram',
     'social.title': 'Dernières réalisations',
     'social.subtitle': 'Retrouvez nos emballages en situation chez nos restaurants partenaires.',
-    'social.btn': 'Suivre @shapack.ig',
+    'social.btn': 'Suivre @shapack.be',
 
     // Portfolio Page
     'portfolio.tag': 'Réalisations',
@@ -231,7 +231,7 @@ const translations: Record<Language, Record<string, string>> = {
     'social.tag': 'Instagram',
     'social.title': 'Recent Packaging Runs',
     'social.subtitle': 'See custom packagings live in action at our partner restaurants.',
-    'social.btn': 'Follow @shapack.ig',
+    'social.btn': 'Follow @shapack.be',
 
     // Portfolio Page
     'portfolio.tag': 'Portfolio',
@@ -370,7 +370,7 @@ const translations: Record<Language, Record<string, string>> = {
     'social.tag': 'Instagram',
     'social.title': 'Aktuelle Arbeiten',
     'social.subtitle': 'Verpackungen im Praxiseinsatz unserer Gastro-Partner.',
-    'social.btn': 'Folgen auf @shapack.ig',
+    'social.btn': 'Folgen auf @shapack.be',
 
     // Portfolio Page
     'portfolio.tag': 'Referenzen',
@@ -509,7 +509,7 @@ const translations: Record<Language, Record<string, string>> = {
     'social.tag': 'Instagram',
     'social.title': 'Recente realisaties',
     'social.subtitle': 'Bekijk onze verpakkingen in de praktijk bij aangesloten horecazaken.',
-    'social.btn': 'Volg @shapack.ig',
+    'social.btn': 'Volg @shapack.be',
 
     // Portfolio Page
     'portfolio.tag': 'Realisaties',
