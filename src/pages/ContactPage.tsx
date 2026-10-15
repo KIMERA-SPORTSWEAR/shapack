@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
-import { Phone, Mail, MapPin, Clock, CheckCircle2, Send, Upload, ShieldCheck } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, CheckCircle2, Send, Upload, ShieldCheck, Loader2, AlertCircle } from 'lucide-react';
 
 export const ContactPage: React.FC = () => {
   const { t } = useLanguage();
@@ -17,12 +17,15 @@ export const ContactPage: React.FC = () => {
     prefilledProduct ? [prefilledProduct] : ['Boîtes à burgers kraft & carton']
   );
   const [volume, setVolume] = useState('Petite série (test ou démarrage)');
-  const [logoFile, setLogoFile] = useState<string>('');
+  const [logoFile, setLogoFile] = useState<File | null>(null);
+  const [logoFileName, setLogoFileName] = useState<string>('');
   const [message, setMessage] = useState(
     prefilledProduct ? `Devis / Quote: ${prefilledProduct}` : ''
   );
   const [submitted, setSubmitted] = useState(false);
   const [refId, setRefId] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const packagingOptions = [
     'Boîtes à burgers kraft & carton',
@@ -44,11 +47,55 @@ export const ContactPage: React.FC = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    setErrorMessage(null);
     const generatedRef = `SHA-${new Date().getFullYear()}-${Math.floor(1000 + Math.random() * 9000)}`;
     setRefId(generatedRef);
-    setSubmitted(true);
+
+    try {
+      const formData = new FormData();
+      formData.append('access_key', 'cd32f65f-e9b0-41ea-8d78-7d1a5964789f');
+      formData.append('subject', `Demande de Devis SHAPACK - ${restaurantName || 'Restaurant'} (Réf: ${generatedRef})`);
+      formData.append('from_name', 'SHAPACK Website');
+      formData.append('replyto', email);
+
+      formData.append('Référence Devis', generatedRef);
+      formData.append('Nom Restaurant / Établissement', restaurantName);
+      formData.append('Nom du Contact', contactName);
+      formData.append('Email professionnel', email);
+      formData.append('Téléphone direct', phone);
+      formData.append('Ville / Localisation', city || 'Non précisée');
+      formData.append('Packagings sélectionnés', selectedTypes.join(', '));
+      formData.append('Volume estimé', volume);
+      if (message) {
+        formData.append('Message & Détails', message);
+      }
+      if (logoFile) {
+        formData.append('attachment', logoFile);
+      }
+
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          Accept: 'application/json'
+        }
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setSubmitted(true);
+      } else {
+        setErrorMessage(result.message || "Une erreur est survenue lors de l'envoi de votre demande.");
+      }
+    } catch (err) {
+      console.error('Erreur Web3Forms:', err);
+      setErrorMessage("Une erreur de communication est survenue. Veuillez vérifier votre connexion ou nous contacter directement au +32 498 22 11 69.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -311,14 +358,15 @@ export const ContactPage: React.FC = () => {
                   <div>
                     <span className="text-[11px] text-slate-500 block mb-1">{t('contact.logo')}</span>
                     <label className="border border-dashed border-slate-300 hover:border-blue-500 rounded-lg p-2.5 flex items-center justify-center gap-2 cursor-pointer bg-slate-50 text-xs text-slate-600 transition-colors">
-                      <Upload className="w-3.5 h-3.5 text-blue-600" />
-                      <span className="truncate">{logoFile ? logoFile : t('contact.logoUpload')}</span>
+                      <Upload className="w-3.5 h-3.5 text-blue-600 shrink-0" />
+                      <span className="truncate">{logoFileName ? logoFileName : t('contact.logoUpload')}</span>
                       <input
                         type="file"
                         accept=".pdf,.png,.jpg,.jpeg,.svg,.ai"
                         onChange={(e) => {
                           if (e.target.files && e.target.files[0]) {
-                            setLogoFile(e.target.files[0].name);
+                            setLogoFile(e.target.files[0]);
+                            setLogoFileName(e.target.files[0].name);
                           }
                         }}
                         className="hidden"
@@ -338,14 +386,36 @@ export const ContactPage: React.FC = () => {
                   </div>
                 </div>
 
+                {/* Error Banner */}
+                {errorMessage && (
+                  <div className="p-3 rounded-lg bg-red-50 border border-red-200 text-red-700 text-xs flex items-center gap-2">
+                    <AlertCircle className="w-4 h-4 shrink-0 text-red-600" />
+                    <span>{errorMessage}</span>
+                  </div>
+                )}
+
                 {/* Submit button */}
                 <div className="pt-2">
                   <button
                     type="submit"
-                    className="w-full py-3.5 px-6 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-md shadow-blue-500/20 transition-all cursor-pointer"
+                    disabled={isSubmitting}
+                    className={`w-full py-3.5 px-6 rounded-lg text-white font-bold text-sm flex items-center justify-center gap-2 shadow-md shadow-blue-500/20 transition-all ${
+                      isSubmitting
+                        ? 'bg-blue-400 cursor-not-allowed'
+                        : 'bg-blue-600 hover:bg-blue-700 cursor-pointer'
+                    }`}
                   >
-                    <Send className="w-4 h-4" />
-                    <span>{t('contact.submitBtn')}</span>
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                        <span>Envoi du devis en cours...</span>
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-4 h-4" />
+                        <span>{t('contact.submitBtn')}</span>
+                      </>
+                    )}
                   </button>
                   <p className="text-[11px] text-slate-500 text-center mt-2">
                     {t('contact.noCommitment')}
