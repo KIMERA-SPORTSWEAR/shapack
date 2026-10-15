@@ -63,7 +63,7 @@ export const Footer: React.FC = () => {
             <div className="space-y-2 pt-1 text-xs text-slate-400">
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-blue-400 shrink-0" />
-                <span>SHAPACK • Votre expert en emballage</span>
+                <span>SHAPACK Packaging</span>
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="w-4 h-4 text-blue-400 shrink-0" />
@@ -194,12 +194,10 @@ export const Footer: React.FC = () => {
           <div>
             {t('footer.copyright')}
           </div>
-          <div className="flex items-center gap-4">
-            <span>{t('footer.legal')}</span>
-            <span>•</span>
-            <span>{t('footer.terms')}</span>
-            <span>•</span>
-            <span>{t('footer.privacy')}</span>
+          <div className="flex items-center gap-6">
+            <span className="hover:text-slate-400 cursor-pointer">{t('footer.legal')}</span>
+            <span className="hover:text-slate-400 cursor-pointer">{t('footer.terms')}</span>
+            <span className="hover:text-slate-400 cursor-pointer">{t('footer.privacy')}</span>
           </div>
         </div>
 

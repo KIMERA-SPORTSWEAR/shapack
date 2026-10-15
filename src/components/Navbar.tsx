@@ -41,9 +41,8 @@ export const Navbar: React.FC = () => {
               <span className="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
               {t('nav.topTag')}
             </span>
-            <span className="hidden md:inline text-slate-600">•</span>
             <span className="hidden md:inline text-slate-300">
-              {t('nav.topQuote')}
+              / {t('nav.topQuote')}
             </span>
           </div>
 

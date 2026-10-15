@@ -1,7 +1,7 @@
 import { ProductItem } from '../types';
 
 export const PRODUCTS: ProductItem[] = [
-  // --- 1. BOÎTES & ÉTUIS CHAUDS ---
+  // 1. Boîtes et étuis chauds
   {
     id: 'boite-burger',
     name: 'Boîtes à Burger Kraft & Carton Blanc',
@@ -59,7 +59,7 @@ export const PRODUCTS: ProductItem[] = [
     features: ['Aérations vapeur sur le couvercle', 'Fond étanche anti-fuite', 'Parfait pour la livraison à domicile']
   },
 
-  // --- 2. PLATS & SALADES ---
+  // 2. Plats et salades
   {
     id: 'saladier-bowl',
     name: 'Saladiers Ronds / Poke Bowls Kraft',
@@ -103,7 +103,7 @@ export const PRODUCTS: ProductItem[] = [
     features: ['Fermeture sans couvercle plastique', 'Coins pliés étanches', 'Se déplie en assiette']
   },
 
-  // --- 3. BOULANGERIE & SANDWICHES ---
+  // 3. Boulangerie et sandwiches
   {
     id: 'boite-sandwich',
     name: 'Boîtes à Sandwichs Triangle à Fenêtre',
@@ -147,7 +147,7 @@ export const PRODUCTS: ProductItem[] = [
     features: ['Papier kraft respirant', 'Impression logo personnalisé', 'Soufflets latéraux volumineux']
   },
 
-  // --- 4. SACS & TRANSPORT ---
+  // 4. Sacs et transport
   {
     id: 'sac-cabas-torsade',
     name: 'Sacs Cabas Kraft Poignées Torsadées (Fond Large)',
@@ -177,7 +177,7 @@ export const PRODUCTS: ProductItem[] = [
     features: ['Fond carré tenant debout seul', 'Facile à sceller avec autocollant', 'Parfait pour livreurs en 2 roues']
   },
 
-  // --- 5. GOBELETS & ACCESSOIRES ---
+  // 5. Gobelets et accessoires
   {
     id: 'gobelet-double-paroi',
     name: 'Gobelets Kraft Double Paroi Boissons Chaudes & Froides',
