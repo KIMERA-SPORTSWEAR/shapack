@@ -63,7 +63,7 @@ export const Footer: React.FC = () => {
             <div className="space-y-2 pt-1 text-xs text-slate-400">
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-blue-400 shrink-0" />
-                <span>SHAPACK Packaging</span>
+                <span>SHAPACK Packaging • Bruxelles, Belgique</span>
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="w-4 h-4 text-blue-400 shrink-0" />
@@ -74,11 +74,11 @@ export const Footer: React.FC = () => {
             {/* Social Icons */}
             <div className="pt-2 flex items-center gap-3">
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/shapack.be/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 rounded-lg bg-slate-800 hover:bg-pink-600 text-slate-300 hover:text-white flex items-center justify-center transition-colors"
-                title="Instagram @shapack.packaging"
+                title="Instagram @shapack.be"
               >
                 <InstagramIcon className="w-4 h-4" />
               </a>

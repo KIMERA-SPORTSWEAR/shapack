@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { ChevronLeft, ChevronRight, ExternalLink } from 'lucide-react';
+import { ChevronLeft, ChevronRight, MapPin, Package, ExternalLink } from 'lucide-react';
 
 const InstagramIcon: React.FC<{ className?: string }> = ({ className = 'w-3.5 h-3.5' }) => (
   <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -15,27 +15,34 @@ export const TrustedBySlider: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
-  // Exact 3 real partners provided by the user
   const partners = [
     {
-      id: 'wayta',
-      name: 'Wayta',
-      specialty: 'Empanadas artisanales',
-      city: 'Anvers',
-      instagram: '@wayta.be',
-      instagramUrl: 'https://www.instagram.com/wayta.be/',
-      packaging: 'Sachets kraft & boîtes empanadas',
+      id: 'claes-stroobants',
+      name: 'Claes Stroobants',
+      specialty: 'Poissonnerie & Traiteur depuis 1960',
+      badge: 'Fournisseur Breveté de la Cour',
+      city: 'Bruxelles (Woluwe & Meise)',
+      packaging: 'Papiers ingraissables & sacs cabas traiteur',
+      instagram: '@claesstroobants',
+      instagramUrl: 'https://www.instagram.com/claesstroobants/',
+      accentBorder: 'border-amber-200/80',
+      logoBg: 'bg-gradient-to-b from-slate-900 to-slate-950',
       renderLogo: () => (
-        <svg viewBox="0 0 200 60" className="h-12 w-auto max-w-[170px]" fill="none">
-          {/* Sun / Empanada crescent */}
-          <path d="M26 38C26 25 36 16 48 16C50 16 52 17 54 18C44 21 37 30 37 42C37 44 37.2 46 37.6 48C31 46 26 42 26 38Z" fill="#F59E0B" />
-          <circle cx="48" cy="24" r="3" fill="#D97706" />
+        <svg viewBox="0 0 240 70" className="h-14 w-auto object-contain" fill="none">
+          {/* Royal Crown */}
+          <g transform="translate(102, 4) scale(0.75)">
+            <path d="M24 6L29 16L39 12L34 24H14L9 12L19 16L24 6Z" fill="#C5A059" stroke="#E5C158" strokeWidth="1" />
+            <circle cx="24" cy="5" r="2.5" fill="#E5C158" />
+            <circle cx="9" cy="11" r="2" fill="#E5C158" />
+            <circle cx="39" cy="11" r="2" fill="#E5C158" />
+            <rect x="14" y="23" width="20" height="3" rx="1.5" fill="#C5A059" />
+          </g>
           {/* Typo */}
-          <text x="64" y="38" fill="#1E293B" fontFamily="'Plus Jakarta Sans', sans-serif" fontSize="22" fontWeight="900" letterSpacing="2">
-            WAYTA
+          <text x="120" y="44" textAnchor="middle" fill="#FFFFFF" fontFamily="Georgia, serif" fontSize="16" fontWeight="bold" letterSpacing="2">
+            CLAES STROOBANTS
           </text>
-          <text x="65" y="49" fill="#D97706" fontFamily="sans-serif" fontSize="7" fontWeight="700" letterSpacing="2">
-            EMPANADAS • ANTWERPEN
+          <text x="120" y="58" textAnchor="middle" fill="#C5A059" fontFamily="sans-serif" fontSize="7" fontWeight="600" letterSpacing="2.5">
+            POISSONNERIE • TRAITEUR • DEPUIS 1960
           </text>
         </svg>
       )
@@ -44,27 +51,74 @@ export const TrustedBySlider: React.FC = () => {
       id: 'fishbar',
       name: 'Fish Bar Claes Stroobants',
       specialty: 'Comptoir marin & street seafood',
-      city: 'Bruxelles (Halles Saint-Géry)',
+      badge: 'Halles Saint-Géry',
+      city: 'Bruxelles (Centre-Ville)',
+      packaging: 'Barquettes carton & papiers alimentaires',
       instagram: '@fishbar_claesstroobants',
       instagramUrl: 'https://www.instagram.com/fishbar_claesstroobants/',
-      packaging: 'Papiers ingraissables & barquettes traiteur',
+      accentBorder: 'border-blue-200/80',
+      logoBg: 'bg-gradient-to-b from-slate-900 to-blue-950',
       renderLogo: () => (
-        <svg viewBox="0 0 240 60" className="h-12 w-auto max-w-[210px]" fill="none">
-          {/* Fish & Crown Crest */}
-          <g transform="translate(10, 10)">
-            <path d="M6 20C14 12 24 16 32 20C24 24 14 28 6 20Z" fill="#0A192F" stroke="#C5A059" strokeWidth="1.5" />
-            <circle cx="12" cy="19" r="1.5" fill="#C5A059" />
-            <path d="M30 18L36 14V26L30 22" fill="#C5A059" />
+        <svg viewBox="0 0 240 70" className="h-14 w-auto object-contain" fill="none">
+          {/* Maritime Fish Crest */}
+          <g transform="translate(100, 6) scale(0.9)">
+            <path d="M6 18C16 10 28 14 36 18C28 22 16 26 6 18Z" fill="#0A192F" stroke="#38BDF8" strokeWidth="1.5" />
+            <circle cx="12" cy="17" r="1.5" fill="#38BDF8" />
+            <path d="M34 16L40 12V24L34 20" fill="#38BDF8" />
           </g>
-          {/* Typo */}
-          <text x="56" y="28" fill="#0A192F" fontFamily="Georgia, serif" fontSize="15" fontWeight="bold" letterSpacing="1.5">
+          <text x="120" y="44" textAnchor="middle" fill="#FFFFFF" fontFamily="Georgia, serif" fontSize="15" fontWeight="bold" letterSpacing="2">
             FISH BAR
           </text>
-          <text x="56" y="42" fill="#C5A059" fontFamily="Georgia, serif" fontSize="10.5" fontWeight="600" letterSpacing="2">
-            CLAES STROOBANTS
+          <text x="120" y="58" textAnchor="middle" fill="#38BDF8" fontFamily="sans-serif" fontSize="8" fontWeight="700" letterSpacing="2.5">
+            HALLES SAINT-GÉRY • BRUXELLES
           </text>
-          <text x="56" y="52" fill="#64748B" fontFamily="sans-serif" fontSize="6" fontWeight="500" letterSpacing="1.5">
-            BRUXELLES • HALLES SAINT-GÉRY
+        </svg>
+      )
+    },
+    {
+      id: 'eatya',
+      name: 'EATYA',
+      specialty: 'Organic Essentials & Superfoods',
+      badge: 'Vidya & Habebe Molenbeek',
+      city: 'Bruxelles (Quai des Charbonnages)',
+      packaging: 'Pochons kraft étanches & sachets scellés',
+      instagram: '@eatya.food',
+      instagramUrl: 'https://www.instagram.com/eatya.food/',
+      accentBorder: 'border-emerald-200/80',
+      logoBg: 'bg-gradient-to-b from-emerald-950 to-slate-900',
+      renderLogo: () => (
+        <svg viewBox="0 0 220 70" className="h-14 w-auto object-contain" fill="none">
+          <text x="110" y="42" textAnchor="middle" fill="#FFFFFF" fontFamily="'Plus Jakarta Sans', sans-serif" fontSize="30" fontWeight="900" letterSpacing="-1.5">
+            eatya<tspan fill="#34D399">.</tspan>
+          </text>
+          <rect x="55" y="48" width="110" height="1.5" fill="#34D399" rx="0.75" />
+          <text x="110" y="59" textAnchor="middle" fill="#A7F3D0" fontFamily="sans-serif" fontSize="7" fontWeight="700" letterSpacing="2.5">
+            ORGANIC ESSENTIALS • BRUXELLES
+          </text>
+        </svg>
+      )
+    },
+    {
+      id: 'wayta',
+      name: 'Wayta',
+      specialty: 'Empanadas artisanales boliviennes',
+      badge: 'Antwerpen Hotspot',
+      city: 'Anvers (Everdijstraat)',
+      packaging: 'Sachets kraft & boîtes empanadas',
+      instagram: '@wayta.be',
+      instagramUrl: 'https://www.instagram.com/wayta.be/',
+      accentBorder: 'border-amber-200/80',
+      logoBg: 'bg-gradient-to-b from-amber-950 to-slate-900',
+      renderLogo: () => (
+        <svg viewBox="0 0 220 70" className="h-14 w-auto object-contain" fill="none">
+          {/* Crescent Empanada Icon */}
+          <path d="M40 38C40 25 50 16 62 16C64 16 66 17 68 18C58 21 51 30 51 42C51 44 51.2 46 51.6 48C45 46 40 42 40 38Z" fill="#F59E0B" />
+          <circle cx="62" cy="24" r="3" fill="#D97706" />
+          <text x="80" y="40" fill="#FFFFFF" fontFamily="'Plus Jakarta Sans', sans-serif" fontSize="24" fontWeight="900" letterSpacing="2">
+            WAYTA
+          </text>
+          <text x="80" y="52" fill="#FBBF24" fontFamily="sans-serif" fontSize="8" fontWeight="700" letterSpacing="2">
+            EMPANADAS • ANTWERPEN
           </text>
         </svg>
       )
@@ -72,23 +126,24 @@ export const TrustedBySlider: React.FC = () => {
     {
       id: 'bouliburgers',
       name: 'Bouli Burgers',
-      specialty: 'Burgers & street food',
+      specialty: 'Smash burgers & street food',
+      badge: 'Street Food Gourmet',
       city: 'Restaurant & Takeaway',
+      packaging: 'Boîtes burgers & étuis à frites',
       instagram: '@bouliburgers',
       instagramUrl: 'https://www.instagram.com/bouliburgers/',
-      packaging: 'Boîtes burgers & étuis frites personnalisés',
+      accentBorder: 'border-rose-200/80',
+      logoBg: 'bg-gradient-to-b from-rose-950 to-slate-900',
       renderLogo: () => (
-        <svg viewBox="0 0 200 60" className="h-12 w-auto max-w-[180px]" fill="none">
-          {/* Burger Stamp */}
-          <circle cx="28" cy="30" r="18" fill="#FEF2F2" stroke="#EF4444" strokeWidth="2" />
-          <path d="M18 28C18 22 22 19 28 19C34 19 38 22 38 28H18Z" fill="#DC2626" />
-          <rect x="17" y="30" width="22" height="3" rx="1.5" fill="#78350F" />
-          <path d="M18 35C18 38 22 40 28 40C34 40 38 38 38 35H18Z" fill="#DC2626" />
-          {/* Typo */}
-          <text x="54" y="29" fill="#0F172A" fontFamily="'Plus Jakarta Sans', sans-serif" fontSize="17" fontWeight="900" letterSpacing="1">
+        <svg viewBox="0 0 220 70" className="h-14 w-auto object-contain" fill="none">
+          <circle cx="45" cy="35" r="18" fill="#881337" stroke="#F43F5E" strokeWidth="2" />
+          <path d="M35 33C35 27 39 24 45 24C51 24 55 27 55 33H35Z" fill="#FB7185" />
+          <rect x="34" y="35" width="22" height="3" rx="1.5" fill="#FFF1F2" />
+          <path d="M35 40C35 43 39 45 45 45C51 45 55 43 55 40H35Z" fill="#FB7185" />
+          <text x="76" y="36" fill="#FFFFFF" fontFamily="'Plus Jakarta Sans', sans-serif" fontSize="18" fontWeight="900" letterSpacing="1.5">
             BOULI
           </text>
-          <text x="54" y="44" fill="#EF4444" fontFamily="'Plus Jakarta Sans', sans-serif" fontSize="13" fontWeight="800" letterSpacing="2">
+          <text x="76" y="50" fill="#FDA4AF" fontFamily="'Plus Jakarta Sans', sans-serif" fontSize="13" fontWeight="800" letterSpacing="2.5">
             BURGERS
           </text>
         </svg>
@@ -98,12 +153,12 @@ export const TrustedBySlider: React.FC = () => {
 
   const total = partners.length;
 
-  // Slow, smooth slide progression every 5 seconds
+  // Calm, smooth automatic sliding every 4.5 seconds
   useEffect(() => {
     if (isPaused) return;
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % total);
-    }, 5000);
+    }, 4500);
 
     return () => clearInterval(interval);
   }, [isPaused, total]);
@@ -117,104 +172,129 @@ export const TrustedBySlider: React.FC = () => {
   };
 
   return (
-    <section className="py-16 bg-white border-y border-slate-100">
+    <section className="py-16 bg-slate-50/70 border-y border-slate-200/80 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Simple & Clean Header */}
-        <div className="flex items-end justify-between gap-4 mb-10">
+        {/* Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
           <div>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-xs font-bold text-blue-700 mb-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse" />
+              <span>BRUXELLES & BELGIQUE</span>
+            </div>
             <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
               {t('trusted.title')}
             </h2>
-            <p className="text-sm text-slate-500 mt-1">
-              Les établissements qui nous confient leurs emballages personnalisés.
+            <p className="text-xs sm:text-sm text-slate-500 mt-1 max-w-xl">
+              {t('trusted.subtitle')}
             </p>
           </div>
 
-          {/* Simple Slider Controls */}
-          <div className="flex items-center gap-2">
+          {/* Navigation Controls */}
+          <div className="flex items-center gap-2.5 self-start md:self-auto">
             <button
               onClick={handlePrev}
-              aria-label="Précédent"
-              className="w-9 h-9 rounded-lg border border-slate-200 hover:border-slate-400 bg-white text-slate-600 flex items-center justify-center transition-colors cursor-pointer"
+              aria-label="Partenaire précédent"
+              className="w-10 h-10 rounded-xl bg-white border border-slate-200 hover:border-blue-500 hover:text-blue-600 text-slate-700 shadow-sm flex items-center justify-center transition-all cursor-pointer active:scale-95"
             >
-              <ChevronLeft className="w-4 h-4" />
+              <ChevronLeft className="w-5 h-5" />
             </button>
             <button
               onClick={handleNext}
-              aria-label="Suivant"
-              className="w-9 h-9 rounded-lg border border-slate-200 hover:border-slate-400 bg-white text-slate-600 flex items-center justify-center transition-colors cursor-pointer"
+              aria-label="Partenaire suivant"
+              className="w-10 h-10 rounded-xl bg-white border border-slate-200 hover:border-blue-500 hover:text-blue-600 text-slate-700 shadow-sm flex items-center justify-center transition-all cursor-pointer active:scale-95"
             >
-              <ChevronRight className="w-4 h-4" />
+              <ChevronRight className="w-5 h-5" />
             </button>
           </div>
         </div>
 
-        {/* Clean, Light Cards Grid with Smooth Slide Animation */}
+        {/* Carousel Viewport with Smooth Slide-In Animation */}
         <div
-          className="relative overflow-hidden"
+          className="relative overflow-hidden -mx-2 px-2 py-1"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {partners.map((partner, idx) => {
-              const isHighlighted = currentIndex === idx;
-              return (
-                <div
-                  key={partner.id}
-                  className={`rounded-2xl border p-6 transition-all duration-500 flex flex-col justify-between ${
-                    isHighlighted
-                      ? 'border-blue-500 bg-blue-50/20 shadow-md ring-1 ring-blue-500/20'
-                      : 'border-slate-200 bg-white hover:border-slate-300'
-                  }`}
-                >
-                  {/* Big Clean Logo Zone */}
-                  <div className="h-20 flex items-center justify-start pb-4 border-b border-slate-100">
+          <div
+            className="flex transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] gap-6"
+            style={{
+              transform: `translateX(-${currentIndex * (100 / Math.min(total, 3))}%)`
+            }}
+          >
+            {partners.map((partner) => (
+              <div
+                key={partner.id}
+                className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] shrink-0 rounded-2xl bg-white border border-slate-200/90 hover:border-blue-400 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between overflow-hidden group"
+              >
+                {/* Upper Brand Showcase: Big High Quality Logo on Deep Accent Background */}
+                <div className={`h-28 ${partner.logoBg} relative flex items-center justify-center px-4 overflow-hidden`}>
+                  {/* Subtle Background Pattern */}
+                  <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:10px_10px]" />
+                  
+                  {/* High Quality Logo Vector */}
+                  <div className="relative z-10 w-full flex items-center justify-center">
                     {partner.renderLogo()}
                   </div>
 
-                  {/* Brand & Specialty Info */}
-                  <div className="pt-5 space-y-2">
-                    <div className="flex items-center justify-between">
-                      <h3 className="font-bold text-slate-900 text-lg">
+                  {/* Certified badge */}
+                  <div className="absolute top-2.5 right-2.5 bg-black/40 backdrop-blur-sm px-2 py-0.5 rounded-full border border-white/10 text-[10px] font-medium text-slate-300">
+                    {partner.badge}
+                  </div>
+                </div>
+
+                {/* Card Body */}
+                <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
+                  <div className="space-y-1.5">
+                    <div className="flex items-center justify-between gap-2">
+                      <h3 className="font-bold text-slate-900 text-base group-hover:text-blue-600 transition-colors">
                         {partner.name}
                       </h3>
                       <a
                         href={partner.instagramUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-xs font-semibold text-slate-400 hover:text-pink-600 flex items-center gap-1 transition-colors"
+                        className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-slate-50 hover:bg-pink-50 text-slate-500 hover:text-pink-600 border border-slate-200 text-[11px] font-semibold transition-colors"
                       >
-                        <InstagramIcon className="w-3.5 h-3.5" />
+                        <InstagramIcon className="w-3 h-3 text-pink-500" />
                         <span>{partner.instagram}</span>
-                        <ExternalLink className="w-3 h-3 opacity-60" />
+                        <ExternalLink className="w-2.5 h-2.5 opacity-60" />
                       </a>
                     </div>
 
                     <p className="text-xs text-slate-500 font-medium">
-                      {partner.specialty} • {partner.city}
+                      {partner.specialty}
                     </p>
+                  </div>
 
-                    <div className="text-xs text-slate-600 pt-1">
-                      <span className="text-[11px] text-slate-400 block mb-0.5">Emballages réalisés :</span>
-                      <span className="font-medium text-slate-800">{partner.packaging}</span>
+                  {/* City Location */}
+                  <div className="flex items-center gap-1.5 text-xs text-slate-600">
+                    <MapPin className="w-3.5 h-3.5 text-blue-600 shrink-0" />
+                    <span className="font-medium text-[11px]">{partner.city}</span>
+                  </div>
+
+                  {/* Packaging Details */}
+                  <div className="p-3 rounded-xl bg-slate-50 border border-slate-100 flex items-start gap-2 text-xs text-slate-700">
+                    <Package className="w-3.5 h-3.5 text-blue-600 shrink-0 mt-0.5" />
+                    <div>
+                      <span className="text-[10px] text-slate-400 font-semibold uppercase block">Emballages réalisés</span>
+                      <span className="font-medium text-[11px] text-slate-800">{partner.packaging}</span>
                     </div>
                   </div>
                 </div>
-              );
-            })}
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* Simple Dots */}
+        {/* Dots Pagination */}
         <div className="flex items-center justify-center gap-2 mt-8">
           {partners.map((_, i) => (
             <button
               key={i}
               onClick={() => setCurrentIndex(i)}
-              aria-label={`Voir partenaire ${i + 1}`}
-              className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
-                currentIndex === i ? 'w-6 bg-blue-600' : 'w-1.5 bg-slate-200 hover:bg-slate-300'
+              aria-label={`Aller au partenaire ${i + 1}`}
+              className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
+                currentIndex === i ? 'w-8 bg-blue-600' : 'w-2 bg-slate-200 hover:bg-slate-300'
               }`}
             />
           ))}

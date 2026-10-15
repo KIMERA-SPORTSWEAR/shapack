@@ -116,7 +116,7 @@ export const ContactPage: React.FC = () => {
                   <div>
                     <span className="text-xs text-slate-400 block">{t('contact.headquarters')}</span>
                     <span className="font-semibold text-slate-800 text-xs">
-                      SHAPACK Packaging
+                      SHAPACK Packaging • Bruxelles, Belgique
                     </span>
                   </div>
                 </div>
