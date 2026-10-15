@@ -12,7 +12,7 @@ export const PRODUCTS: ProductItem[] = [
     image: '/images/burger.jpg',
     dimensions: ['Standard (115 x 115 x 75 mm)', 'Gourmet (125 x 125 x 85 mm)', 'Maxi Smash (140 x 140 x 95 mm)'],
     materials: ['Carton kraft naturel 300g/m²', 'Carton blanc couché 320g/m²'],
-    moq: '2 000 pièces',
+    moq: 'Sur devis',
     leadTime: '3 à 4 semaines',
     features: ['Impression quadri jusqu\'à 100% de la surface', 'Aérations anti-condensation', 'Barrière anti-gras haute tenue', 'Fermeture à rabat sécurisé']
   },
@@ -26,7 +26,7 @@ export const PRODUCTS: ProductItem[] = [
     image: '/images/hero.jpg',
     dimensions: ['Taille S - 120g', 'Taille M - 180g', 'Taille L - 250g'],
     materials: ['Carton kraft brun 280g/m²', 'Carton blanc satiné 300g/m²'],
-    moq: '3 000 pièces',
+    moq: 'Sur devis',
     leadTime: '3 à 4 semaines',
     features: ['Découpe biseautée ergonomique', 'Fond plat auto-stable', 'Cartonnette barrière anti-gras']
   },
@@ -40,7 +40,7 @@ export const PRODUCTS: ProductItem[] = [
     image: '/images/hero.jpg',
     dimensions: ['Standard (90 x 45 x 200 mm)', 'Maxi (105 x 50 x 240 mm)'],
     materials: ['Cartonnette kraft 280g/m²', 'Carton blanc'],
-    moq: '2 500 pièces',
+    moq: 'Sur devis',
     leadTime: '3 à 4 semaines',
     features: ['Bande de déchirement rapide Tear-off', 'Conditionnement à plat économique', 'Maintien au chaud']
   },
@@ -54,7 +54,7 @@ export const PRODUCTS: ProductItem[] = [
     image: '/images/burger.jpg',
     dimensions: ['500 ml (150 x 100 x 60 mm)', '800 ml (180 x 120 x 70 mm)', 'Family 1200 ml (220 x 140 x 80 mm)'],
     materials: ['Carton kraft doublé 350g/m²'],
-    moq: '2 000 pièces',
+    moq: 'Sur devis',
     leadTime: '3 à 4 semaines',
     features: ['Aérations vapeur sur le couvercle', 'Fond étanche anti-fuite', 'Parfait pour la livraison à domicile']
   },
@@ -70,7 +70,7 @@ export const PRODUCTS: ProductItem[] = [
     image: '/images/poke.jpg',
     dimensions: ['480 ml (16 oz)', '750 ml (26 oz)', '1000 ml (32 oz)', '1300 ml (45 oz)'],
     materials: ['Carton kraft vergé 300g/m² + enduction étanche'],
-    moq: '2 000 pièces',
+    moq: 'Sur devis',
     leadTime: '3 à 4 semaines',
     features: ['Impression circulaire 360°', 'Bord roulé clipsage hermétique', 'Compatible chaud micro-ondes et froid']
   },
@@ -84,7 +84,7 @@ export const PRODUCTS: ProductItem[] = [
     image: '/images/poke.jpg',
     dimensions: ['480 ml (16 oz)', '750 ml (26 oz)', '1000 ml (32 oz)'],
     materials: ['Carton kraft 320g/m²', 'Carton blanc contact alimentaire'],
-    moq: '2 500 pièces',
+    moq: 'Sur devis',
     leadTime: '3 à 4 semaines',
     features: ['Fond étanche soudé par ultrasons', 'Tenue thermique prolongée', 'Couvercle ventilé disponible']
   },
@@ -98,7 +98,7 @@ export const PRODUCTS: ProductItem[] = [
     image: '/images/poke.jpg',
     dimensions: ['500 ml (16 oz)', '750 ml (26 oz)', '1000 ml (32 oz)'],
     materials: ['Carton kraft doublé intérieur'],
-    moq: '2 500 pièces',
+    moq: 'Sur devis',
     leadTime: '3 à 4 semaines',
     features: ['Fermeture sans couvercle plastique', 'Coins pliés étanches', 'Se déplie en assiette']
   },
@@ -114,7 +114,7 @@ export const PRODUCTS: ProductItem[] = [
     image: '/images/bakery.jpg',
     dimensions: ['Double Club (123 x 72 x 123 mm)', 'Triple Gourmand (123 x 85 x 123 mm)'],
     materials: ['Carton kraft 280g/m² + film transparent cellulose'],
-    moq: '3 000 pièces',
+    moq: 'Sur devis',
     leadTime: '3 à 4 semaines',
     features: ['Fenêtre transparente végétale', 'Mise en valeur visuelle au comptoir', 'Fermeture arrière sécurisée']
   },
@@ -128,7 +128,7 @@ export const PRODUCTS: ProductItem[] = [
     image: '/images/bakery.jpg',
     dimensions: ['Panini (190 x 70 x 40 mm)', 'Demi-baguette (240 x 75 x 45 mm)'],
     materials: ['Carton kraft anti-graisse 260g/m²'],
-    moq: '3 000 pièces',
+    moq: 'Sur devis',
     leadTime: '3 à 4 semaines',
     features: ['Absorption des graisses', 'Prise en main immédiate au comptoir']
   },
@@ -142,7 +142,7 @@ export const PRODUCTS: ProductItem[] = [
     image: '/images/bakery.jpg',
     dimensions: ['Petit (140 x 200 mm)', 'Moyen (180 x 280 mm)', 'Grand (220 x 340 mm)'],
     materials: ['Papier kraft brun ou blanc 45g/m²'],
-    moq: '5 000 pièces',
+    moq: 'Sur devis',
     leadTime: '3 à 4 semaines',
     features: ['Papier kraft respirant', 'Impression logo personnalisé', 'Soufflets latéraux volumineux']
   },
@@ -158,7 +158,7 @@ export const PRODUCTS: ProductItem[] = [
     image: '/images/hero.jpg',
     dimensions: ['Moyen (260 x 170 x 290 mm)', 'Grand fond large (320 x 215 x 300 mm)', 'Maxi XL (360 x 240 x 360 mm)'],
     materials: ['Papier kraft vergé 90g à 110g/m²'],
-    moq: '2 000 pièces',
+    moq: 'Sur devis',
     leadTime: '3 à 4 semaines',
     features: ['Fond large anti-renversement', 'Poignées torsadées robustes (6 kg)', 'Impression intégrale quadri 4 faces']
   },
@@ -172,7 +172,7 @@ export const PRODUCTS: ProductItem[] = [
     image: '/images/hero.jpg',
     dimensions: ['Format 10L (260 x 140 x 320 mm)', 'Format 15L (320 x 160 x 400 mm)'],
     materials: ['Papier kraft épais résistant 80g/m²'],
-    moq: '2 500 pièces',
+    moq: 'Sur devis',
     leadTime: '3 à 4 semaines',
     features: ['Fond carré tenant debout seul', 'Facile à sceller avec autocollant', 'Parfait pour livreurs en 2 roues']
   },
@@ -188,7 +188,7 @@ export const PRODUCTS: ProductItem[] = [
     image: '/images/bakery.jpg',
     dimensions: ['120 ml (4 oz - Espresso)', '240 ml (8 oz)', '350 ml (12 oz)', '470 ml (16 oz)'],
     materials: ['Carton kraft double paroi 280g + 250g/m²'],
-    moq: '3 000 pièces',
+    moq: 'Sur devis',
     leadTime: '3 à 4 semaines',
     features: ['Isolation thermique double paroi', 'Impression 360° haute définition', 'Couvercles assortis disponibles']
   },
@@ -202,7 +202,7 @@ export const PRODUCTS: ProductItem[] = [
     image: '/images/burger.jpg',
     dimensions: ['Feuille 300 x 400 mm', 'Feuille 330 x 330 mm', 'Rouleau découpe personnalisée'],
     materials: ['Véritable papier kraft blanc ou écru ingraissable 40g/m²'],
-    moq: '5 000 feuilles',
+    moq: 'Sur devis',
     leadTime: '2 à 3 semaines',
     features: ['100% résistant aux graisses et vapeur', 'Impression logo en continu', 'Toucher authentique street food']
   },
@@ -216,7 +216,7 @@ export const PRODUCTS: ProductItem[] = [
     image: '/images/burger.jpg',
     dimensions: ['Cocktail (20 x 20 cm)', 'Snack / Déjeuner (33 x 33 cm)', 'Grand format (40 x 40 cm)'],
     materials: ['Pure ouate de cellulose 2 plis 34g/m²'],
-    moq: '5 000 pièces',
+    moq: 'Sur devis',
     leadTime: '2 à 3 semaines',
     features: ['Ouate douce et absorbante', 'Pliage distributeur 1/4 ou 1/8', 'Impression 1 à 2 couleurs nette']
   }

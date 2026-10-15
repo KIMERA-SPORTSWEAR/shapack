@@ -151,9 +151,9 @@ export const ProductsPage: React.FC = () => {
 
               {/* Bottom Actions */}
               <div className="p-6 pt-0">
-                <div className="flex items-center justify-between text-xs py-2.5 px-3 bg-slate-50 rounded-lg mb-3">
-                  <span className="text-slate-500">MOQ usine :</span>
-                  <span className="font-bold text-slate-800">{product.moq}</span>
+                <div className="flex items-center justify-between text-xs py-2 px-3 bg-blue-50/50 rounded-lg mb-3 text-blue-900 border border-blue-100">
+                  <span className="text-slate-500">Tarification :</span>
+                  <span className="font-bold text-blue-700">Sur devis sous 24h</span>
                 </div>
 
                 <Link

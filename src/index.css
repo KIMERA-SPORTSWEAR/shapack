@@ -15,6 +15,26 @@
   }
 }
 
+/* Infinite Seamless Marquee Slider */
+@keyframes infinite-slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333333%);
+  }
+}
+
+.infinite-slide-track {
+  display: flex;
+  width: max-content;
+  animation: infinite-slide 34s linear infinite;
+}
+
+.infinite-slide-track:hover {
+  animation-play-state: paused;
+}
+
 /* Custom scrollbars */
 ::-webkit-scrollbar {
   width: 8px;

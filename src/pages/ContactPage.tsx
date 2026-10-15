@@ -16,7 +16,7 @@ export const ContactPage: React.FC = () => {
   const [selectedTypes, setSelectedTypes] = useState<string[]>(
     prefilledProduct ? [prefilledProduct] : ['Boîtes à burgers kraft & carton']
   );
-  const [volume, setVolume] = useState('3 000 pièces');
+  const [volume, setVolume] = useState('Petite série (test ou démarrage)');
   const [logoFile, setLogoFile] = useState<string>('');
   const [message, setMessage] = useState(
     prefilledProduct ? `Devis / Quote: ${prefilledProduct}` : ''
@@ -225,11 +225,11 @@ export const ContactPage: React.FC = () => {
                     onChange={(e) => setVolume(e.target.value)}
                     className="w-full px-3 py-2 rounded-lg border border-slate-300 bg-white text-xs text-slate-800 font-medium focus:outline-none focus:border-blue-600"
                   >
-                    <option value="2 000 pièces">2 000 pcs (MOQ minimum)</option>
-                    <option value="3 000 pièces">3 000 pcs (Idéal démarrage / launch)</option>
-                    <option value="5 000 pièces">5 000 pcs (Standard recommandé)</option>
-                    <option value="10 000 pièces">10 000 pcs (Tarif dégressif)</option>
-                    <option value="20 000+ pièces">20 000+ pcs (Multi-sites / chaînes)</option>
+                    <option value="Petite série (test ou démarrage)">Petite série (avec ou sans minimum selon modèle)</option>
+                    <option value="2 500 à 5 000 pièces">2 500 à 5 000 pièces</option>
+                    <option value="10 000 pièces">10 000 pièces (tarif dégressif)</option>
+                    <option value="20 000+ pièces">20 000+ pièces (multi-sites / chaînes)</option>
+                    <option value="Autre / À définir">Autre quantité (sur devis)</option>
                   </select>
                 </div>
 
