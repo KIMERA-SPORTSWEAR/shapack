@@ -4,12 +4,13 @@ export type ProductCategory =
   | 'salades'
   | 'boulangerie'
   | 'sacs'
-  | 'gobelets';
+  | 'gobelets'
+  | 'luxe';
 
 export interface ProductItem {
   id: string;
   name: string;
-  category: 'chaud' | 'salades' | 'boulangerie' | 'sacs' | 'gobelets';
+  category: 'chaud' | 'salades' | 'boulangerie' | 'sacs' | 'gobelets' | 'luxe';
   categoryLabel: string;
   subtitle: string;
   description: string;

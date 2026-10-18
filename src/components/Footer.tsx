@@ -132,6 +132,11 @@ export const Footer: React.FC = () => {
                   {t('categories.gobelets')}
                 </Link>
               </li>
+              <li>
+                <Link to="/produits?cat=luxe" className="hover:text-blue-400 transition-colors">
+                  {t('categories.luxe')}
+                </Link>
+              </li>
             </ul>
           </div>
 

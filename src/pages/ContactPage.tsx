@@ -36,7 +36,10 @@ export const ContactPage: React.FC = () => {
     'Sacs cabas kraft fond large',
     'Sacs SOS livraison Deliveroo/Uber',
     'Gobelets boissons chaudes & froides',
-    'Papier ingraissable burger personnalisé'
+    'Papier ingraissable burger personnalisé',
+    'Sacs en papier de luxe (poignées ruban)',
+    'Boîtes rigides & coffrets de luxe aimantés',
+    'Pochettes & emballages cadeaux'
   ];
 
   const handleToggleType = (opt: string) => {

@@ -219,5 +219,49 @@ export const PRODUCTS: ProductItem[] = [
     moq: 'Sur devis',
     leadTime: '2 à 3 semaines',
     features: ['Ouate douce et absorbante', 'Pliage distributeur 1/4 ou 1/8', 'Impression 1 à 2 couleurs nette']
+  },
+
+  // 6. Luxe & Cadeaux
+  {
+    id: 'sac-papier-luxe',
+    name: 'Sacs en Papier de Luxe (Poignées Ruban & Cordon)',
+    category: 'luxe',
+    categoryLabel: 'Luxe & Cadeaux',
+    subtitle: 'Sacs shopping prestige avec poignées ruban satin ou cordon tressé',
+    description: 'Sacs en papier haut de gamme pour boutiques, traiteurs raffinés, bijouteries et cadeaux d\'affaires. Finition de prestige avec renforts de fond et revers en carton rigide, dorure à chaud or ou argent, pelliculage mat soft-touch et rubans satin élégants.',
+    image: '/images/luxury_paper_bags.jpg',
+    dimensions: ['Petit format bijouterie (160 x 80 x 200 mm)', 'Moyen format boutique (240 x 100 x 310 mm)', 'Grand format prestige (360 x 120 x 410 mm)'],
+    materials: ['Papier kraft couché ou teinté dans la masse 180 à 250 g/m²', 'Poignées ruban satin, gros-grain ou coton tressé'],
+    moq: 'Sur devis',
+    leadTime: '3 à 4 semaines',
+    features: ['Marquage à chaud or, argent ou or rose', 'Pelliculage mat soft-touch ou brillant', 'Revers et fond renforcés carton rigide', 'Fermeture par nœud ou ruban de serrage']
+  },
+  {
+    id: 'boite-luxe-aimantee',
+    name: 'Boîtes de Luxe Rigides & Coffrets Aimantés',
+    category: 'luxe',
+    categoryLabel: 'Luxe & Cadeaux',
+    subtitle: 'Coffrets montés rigides à rabat aimanté et boîtes cloche prestige',
+    description: 'Boîtes de présentation ultra-qualitatives en carton rigide rembordé (800 à 1500 g/m²). Idéales pour l\'épicerie fine, coffrets dégustation, chocolaterie de luxe, cosmétiques et cadeaux VIP. Fermeture sécurisée par aimants invisibles.',
+    image: '/images/luxury_rigid_boxes.jpg',
+    dimensions: ['Format Carré (150 x 150 x 50 mm)', 'Format Rectangle (220 x 160 x 70 mm)', 'Grand Coffret Prestige (310 x 220 x 90 mm)'],
+    materials: ['Carton rigide rembordé 1200 g/m² avec papier noir ou teinté masse', 'Aimants néodyme invisibles intégrés'],
+    moq: 'Sur devis',
+    leadTime: '3 à 4 semaines',
+    features: ['Fermeture magnétique invisible ou boîte cloche 2 pièces', 'Pelliculage mat anti-rayures au toucher soyeux', 'Gaufrage en relief, débossage ou dorure à chaud', 'Calage intérieur sur-mesure (mousse velours ou carton)']
+  },
+  {
+    id: 'emballages-cadeau-pochettes',
+    name: 'Emballages Cadeaux & Pochettes Prestige',
+    category: 'luxe',
+    categoryLabel: 'Luxe & Cadeaux',
+    subtitle: 'Pochettes cadeaux kraft & teinté masse avec nœuds satinés',
+    description: 'Pochettes et emballages cadeaux raffinés pour les fêtes, lancements et ventes au détail. Disponibles en kraft naturel texturé, noir profond ou blanc immaculé avec bande adhésive protégée ou œillets avec nœud de fermeture.',
+    image: '/images/luxury_gift_packaging.jpg',
+    dimensions: ['Pochette S (120 x 50 x 190 mm)', 'Pochette M (180 x 70 x 250 mm)', 'Pochette L (240 x 90 x 340 mm)'],
+    materials: ['Papier kraft vergé ou couché haute densité 150 à 180 g/m²', 'Ruban satin polyester ou coton sergé'],
+    moq: 'Sur devis',
+    leadTime: '2 à 3 semaines',
+    features: ['Fermeture facile par rabat adhésif ou nœud décoratif', 'Impression logo haute précision ou dorure', '100% recyclable et éco-responsable', 'Conditionnement à plat pour un gain de place optimal']
   }
 ];

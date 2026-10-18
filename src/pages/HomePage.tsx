@@ -14,7 +14,8 @@ import {
   Coffee,
   Sparkles,
   ShieldCheck,
-  Layers
+  Layers,
+  Gift
 } from 'lucide-react';
 
 export const HomePage: React.FC = () => {
@@ -55,6 +56,13 @@ export const HomePage: React.FC = () => {
       icon: Coffee,
       image: '/images/bakery.jpg',
       link: '/produits?cat=gobelets'
+    },
+    {
+      titleKey: 'categories.luxe',
+      desc: 'Sacs en papier de luxe avec ruban, boîtes rigides aimantées et emballages cadeaux.',
+      icon: Gift,
+      image: '/images/luxury_paper_bags.jpg',
+      link: '/produits?cat=luxe'
     }
   ];
 

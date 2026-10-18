@@ -62,6 +62,7 @@ const translations: Record<Language, Record<string, string>> = {
     'categories.boulangerie': 'Boulangerie & Sandwiches',
     'categories.sacs': 'Sacs & Transport',
     'categories.gobelets': 'Gobelets & Accessoires',
+    'categories.luxe': 'Luxe & Cadeaux',
     'categories.discover': 'Découvrir',
 
     // Process
@@ -201,6 +202,7 @@ const translations: Record<Language, Record<string, string>> = {
     'categories.boulangerie': 'Bakery & Sandwiches',
     'categories.sacs': 'Bags & Transport',
     'categories.gobelets': 'Cups & Accessories',
+    'categories.luxe': 'Luxury & Gifts',
     'categories.discover': 'Explore',
 
     // Process
@@ -340,6 +342,7 @@ const translations: Record<Language, Record<string, string>> = {
     'categories.boulangerie': 'Bäckerei & Sandwiches',
     'categories.sacs': 'Tragetaschen',
     'categories.gobelets': 'Becher & Zubehör',
+    'categories.luxe': 'Luxus & Geschenke',
     'categories.discover': 'Entdecken',
 
     // Process
@@ -479,6 +482,7 @@ const translations: Record<Language, Record<string, string>> = {
     'categories.boulangerie': 'Bakkerij & Sandwiches',
     'categories.sacs': 'Draagtassen',
     'categories.gobelets': 'Bekers & Accessoires',
+    'categories.luxe': 'Luxe & Geschenk',
     'categories.discover': 'Ontdekken',
 
     // Process

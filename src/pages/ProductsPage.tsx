@@ -11,7 +11,8 @@ import {
   ShoppingBag, 
   Coffee, 
   ArrowRight,
-  CheckCircle2
+  CheckCircle2,
+  Gift
 } from 'lucide-react';
 
 export const ProductsPage: React.FC = () => {
@@ -33,6 +34,7 @@ export const ProductsPage: React.FC = () => {
     { id: 'boulangerie', label: t('categories.boulangerie'), icon: Sandwich },
     { id: 'sacs', label: t('categories.sacs'), icon: ShoppingBag },
     { id: 'gobelets', label: t('categories.gobelets'), icon: Coffee },
+    { id: 'luxe', label: t('categories.luxe'), icon: Gift },
   ];
 
   const handleSelectCategory = (id: ProductCategory) => {
