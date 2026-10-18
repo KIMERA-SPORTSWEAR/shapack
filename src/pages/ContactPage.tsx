@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
-import { Phone, Mail, MapPin, Clock, CheckCircle2, Send, Upload, ShieldCheck, Loader2, AlertCircle } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, CheckCircle2, Send, Upload, ShieldCheck, Loader2, AlertCircle, ExternalLink } from 'lucide-react';
 
 export const ContactPage: React.FC = () => {
   const { t } = useLanguage();
@@ -430,6 +430,99 @@ export const ContactPage: React.FC = () => {
             )}
           </div>
 
+        </div>
+
+        {/* Google Map & Local Presence Section for Local SEO */}
+        <div className="mt-16 pt-12 border-t border-slate-200">
+          <div className="text-center max-w-2xl mx-auto mb-8 space-y-2">
+            <span className="text-xs font-bold uppercase tracking-wider text-blue-600 block">
+              Implantation Locale & Logistique B2B
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
+              Basé à Bruxelles • Distribution en Belgique & Europe
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-600">
+              Notre siège commercial et notre réseau logistique sont ancrés à Bruxelles pour assurer un service réactif et des livraisons suivies dans tout le Benelux et en France.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+            {/* Interactive Google Map iframe */}
+            <div className="lg:col-span-8 rounded-2xl overflow-hidden border border-slate-200 shadow-sm h-80 sm:h-96 relative bg-slate-100">
+              <iframe
+                title="SHAPACK Packaging Bruxelles Google Maps"
+                src="https://maps.google.com/maps?q=Bruxelles%2C%20Belgique&t=&z=12&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={false}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-full"
+              />
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Bruxelles+Belgique"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute bottom-4 right-4 bg-white/95 backdrop-blur-sm px-3.5 py-2 rounded-lg text-xs font-bold text-slate-800 shadow-md hover:bg-blue-600 hover:text-white transition-all flex items-center gap-1.5"
+              >
+                <MapPin className="w-3.5 h-3.5 text-blue-600 group-hover:text-white" />
+                <span>Ouvrir dans Google Maps</span>
+                <ExternalLink className="w-3 h-3 text-slate-400" />
+              </a>
+            </div>
+
+            {/* Local Hub Info Card */}
+            <div className="lg:col-span-4 p-6 sm:p-8 rounded-2xl bg-slate-900 text-white flex flex-col justify-between space-y-6">
+              <div className="space-y-4">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs font-semibold">
+                  <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
+                  <span>Hub Logistique B2B</span>
+                </div>
+                <h3 className="text-xl font-bold text-white">
+                  SHAPACK Packaging Bruxelles
+                </h3>
+                <p className="text-xs text-slate-400 leading-relaxed">
+                  Conception graphique, validation des BAT industriels et coordination logistique directe pour vos emballages alimentaires et packaging de luxe.
+                </p>
+
+                <div className="space-y-3 pt-2 text-xs text-slate-300">
+                  <div className="flex items-start gap-2.5">
+                    <MapPin className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
+                    <div>
+                      <strong className="text-white block">Zone d'intervention :</strong>
+                      <span>Bruxelles (19 communes), Brabant, Flandre, Wallonie, France & Luxembourg</span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-2.5">
+                    <Phone className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
+                    <div>
+                      <strong className="text-white block">Ligne directe devis :</strong>
+                      <span>+32 498 22 11 69 (Lun - Ven • 8h30 - 18h30)</span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-2.5">
+                    <Mail className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
+                    <div>
+                      <strong className="text-white block">Email professionnel :</strong>
+                      <span>hello@shapack.be</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Bruxelles+Belgique"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-3 px-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs text-center transition-colors shadow-md shadow-blue-500/20 block"
+              >
+                Calculer l'itinéraire Google Maps
+              </a>
+            </div>
+          </div>
         </div>
 
       </div>

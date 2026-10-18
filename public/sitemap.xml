@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Page d'accueil -->
+  <url>
+    <loc>https://shapack.be/</loc>
+    <lastmod>2026-10-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://shapack.be/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://shapack.be/" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://shapack.be/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://shapack.be/" />
+  </url>
+
+  <!-- Catalogue complet -->
+  <url>
+    <loc>https://shapack.be/produits</loc>
+    <lastmod>2026-10-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Catégorie Luxe & Cadeaux -->
+  <url>
+    <loc>https://shapack.be/produits?cat=luxe</loc>
+    <lastmod>2026-10-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Catégorie Boîtes & Étuis Chauds (Burgers / Frites) -->
+  <url>
+    <loc>https://shapack.be/produits?cat=chaud</loc>
+    <lastmod>2026-10-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Catégorie Saladiers & Bowls -->
+  <url>
+    <loc>https://shapack.be/produits?cat=salades</loc>
+    <lastmod>2026-10-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Catégorie Boulangerie & Sandwiches -->
+  <url>
+    <loc>https://shapack.be/produits?cat=boulangerie</loc>
+    <lastmod>2026-10-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Catégorie Sacs & Transport -->
+  <url>
+    <loc>https://shapack.be/produits?cat=sacs</loc>
+    <lastmod>2026-10-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Catégorie Gobelets & Accessoires -->
+  <url>
+    <loc>https://shapack.be/produits?cat=gobelets</loc>
+    <lastmod>2026-10-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Page Contact & Devis -->
+  <url>
+    <loc>https://shapack.be/contact</loc>
+    <lastmod>2026-10-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+</urlset>

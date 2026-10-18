@@ -15,7 +15,10 @@ import {
   Sparkles,
   ShieldCheck,
   Layers,
-  Gift
+  Gift,
+  HelpCircle,
+  MapPin,
+  Phone
 } from 'lucide-react';
 
 export const HomePage: React.FC = () => {
@@ -370,6 +373,85 @@ export const HomePage: React.FC = () => {
               <p className="text-2xl font-black text-white">{t('conditions.quoteVal')}</p>
               <p className="text-xs text-slate-400 mt-1">{t('conditions.quoteSub')}</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SEO & AI Search FAQ Section (Local authority Brussels) */}
+      <section className="py-16 bg-slate-50 border-b border-slate-200">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-12 space-y-2">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-wider">
+              <HelpCircle className="w-3.5 h-3.5" />
+              <span>Questions Fréquentes • FAQ</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
+              Tout savoir sur vos emballages personnalisés à Bruxelles
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-600">
+              Fabricant B2B de confiance pour les professionnels de la restauration et du retail en Belgique.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2.5">
+              <h3 className="text-sm font-bold text-slate-900 flex items-center gap-2">
+                <span className="w-6 h-6 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center text-xs font-bold shrink-0">1</span>
+                Pourquoi choisir SHAPACK à Bruxelles et en Belgique ?
+              </h3>
+              <p className="text-xs text-slate-600 leading-relaxed pl-8">
+                Basé à Bruxelles, SHAPACK combine l'expertise industrielle de l'emballage alimentaire haute rigidité (boîtes burgers, saladiers poke, gobelets, sacs kraft) et du packaging de luxe (sacs avec rubans satin, coffrets rigides aimantés). Nous offrons un chiffrage rapide sous 24h et une distribution suivie dans tout le Benelux et la France.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2.5">
+              <h3 className="text-sm font-bold text-slate-900 flex items-center gap-2">
+                <span className="w-6 h-6 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center text-xs font-bold shrink-0">2</span>
+                Quelles sont les options de personnalisation et finitions ?
+              </h3>
+              <p className="text-xs text-slate-600 leading-relaxed pl-8">
+                Nous réalisons l'impression offset quadri 100% de surface, le marquage à chaud (dorure or, argent, or rose), le gaufrage en relief et le pelliculage mat soft-touch. Vos visuels sont vérifiés avec précision sur nos gabarits industriels avant validation du BAT.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2.5">
+              <h3 className="text-sm font-bold text-slate-900 flex items-center gap-2">
+                <span className="w-6 h-6 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center text-xs font-bold shrink-0">3</span>
+                Y a-t-il une quantité minimale de commande (MOQ) ?
+              </h3>
+              <p className="text-xs text-slate-600 leading-relaxed pl-8">
+                Non. Grâce à nos filières de production partenaires, nous proposons des volumes flexibles adaptés aussi bien aux petites séries de lancement qu'aux volumes importants pour réseaux multi-sites. Tous nos tarifs sont calculés sur devis sous 24h.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2.5">
+              <h3 className="text-sm font-bold text-slate-900 flex items-center gap-2">
+                <span className="w-6 h-6 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center text-xs font-bold shrink-0">4</span>
+                Quels sont les délais de devis et de livraison ?
+              </h3>
+              <p className="text-xs text-slate-600 leading-relaxed pl-8">
+                Votre devis chiffré vous parvient sous 24 heures ouvrées. Après approbation du BAT numérique, les délais de fabrication et de livraison directe à votre adresse sont généralement de 2 à 4 semaines.
+              </p>
+            </div>
+          </div>
+
+          {/* Quick Hub Banner */}
+          <div className="mt-8 p-6 rounded-2xl bg-blue-600 text-white flex flex-col sm:flex-row items-center justify-between gap-4 shadow-md">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
+                <MapPin className="w-5 h-5 text-white" />
+              </div>
+              <div>
+                <h4 className="font-bold text-sm">Prêt à emballer votre restaurant à Bruxelles ?</h4>
+                <p className="text-xs text-blue-100">Devis gratuit & réponse garantie sous 24 heures ouvrées.</p>
+              </div>
+            </div>
+            <Link
+              to="/contact"
+              className="px-5 py-2.5 rounded-lg bg-white text-blue-700 hover:bg-blue-50 font-bold text-xs shadow transition-all shrink-0"
+            >
+              Demander mon devis gratuit
+            </Link>
           </div>
         </div>
       </section>
