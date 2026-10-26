@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { ChevronLeft, ChevronRight, MapPin, Package, ExternalLink } from 'lucide-react';
+import { MapPin, Package, ExternalLink, Sparkles } from 'lucide-react';
 
 const InstagramIcon: React.FC<{ className?: string }> = ({ className = 'w-3.5 h-3.5' }) => (
   <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -10,38 +10,39 @@ const InstagramIcon: React.FC<{ className?: string }> = ({ className = 'w-3.5 h-
   </svg>
 );
 
+interface Partner {
+  id: string;
+  name: string;
+  specialty: string;
+  badge: string;
+  city: string;
+  packaging: string;
+  instagram: string;
+  instagramUrl: string;
+  logoUrl?: string;
+  photoUrl?: string;
+  isDeliveryPhoto?: boolean;
+  logoBg: string;
+  badgeStyle?: string;
+}
+
 export const TrustedBySlider: React.FC = () => {
   const { t } = useLanguage();
   const trackRef = useRef<HTMLDivElement>(null);
 
-  const partners = [
+  const partners: Partner[] = [
     {
-      id: 'claes-stroobants',
-      name: 'Claes Stroobants',
-      specialty: 'Poissonnerie & Traiteur depuis 1960',
-      badge: 'Fournisseur Breveté de la Cour',
-      city: 'Bruxelles (Woluwe & Meise)',
-      packaging: 'Papiers ingraissables & sacs cabas traiteur',
-      instagram: '@claesstroobants',
-      instagramUrl: 'https://www.instagram.com/claesstroobants/',
-      logoBg: 'bg-gradient-to-b from-slate-900 to-slate-950',
-      renderLogo: () => (
-        <svg viewBox="0 0 240 70" className="h-14 w-auto object-contain" fill="none">
-          <g transform="translate(102, 4) scale(0.75)">
-            <path d="M24 6L29 16L39 12L34 24H14L9 12L19 16L24 6Z" fill="#C5A059" stroke="#E5C158" strokeWidth="1" />
-            <circle cx="24" cy="5" r="2.5" fill="#E5C158" />
-            <circle cx="9" cy="11" r="2" fill="#E5C158" />
-            <circle cx="39" cy="11" r="2" fill="#E5C158" />
-            <rect x="14" y="23" width="20" height="3" rx="1.5" fill="#C5A059" />
-          </g>
-          <text x="120" y="44" textAnchor="middle" fill="#FFFFFF" fontFamily="Georgia, serif" fontSize="16" fontWeight="bold" letterSpacing="2">
-            CLAES STROOBANTS
-          </text>
-          <text x="120" y="58" textAnchor="middle" fill="#C5A059" fontFamily="sans-serif" fontSize="7" fontWeight="600" letterSpacing="2.5">
-            POISSONNERIE • TRAITEUR • DEPUIS 1960
-          </text>
-        </svg>
-      )
+      id: 'waffelin',
+      name: 'Waffelin Brussels',
+      specialty: 'Gaufres artisanales de Bruxelles & Liège',
+      badge: 'Grand-Place 37',
+      city: 'Bruxelles (Centre Historique)',
+      packaging: 'Pochettes gaufres ingraissables & boîtes',
+      instagram: '@waffelin.bxl',
+      instagramUrl: 'https://www.instagram.com/waffelin.bxl/',
+      logoUrl: '/images/partners/waffelin.png',
+      logoBg: 'bg-[#2A1500]',
+      badgeStyle: 'bg-black/60 text-amber-200 border-amber-700/40'
     },
     {
       id: 'fishbar',
@@ -49,47 +50,78 @@ export const TrustedBySlider: React.FC = () => {
       specialty: 'Comptoir marin & street seafood',
       badge: 'Halles Saint-Géry',
       city: 'Bruxelles (Centre-Ville)',
-      packaging: 'Barquettes carton & papiers alimentaires',
+      packaging: 'Boîtes street food sur-mesure & papier ingraissable',
       instagram: '@fishbar_claesstroobants',
       instagramUrl: 'https://www.instagram.com/fishbar_claesstroobants/',
-      logoBg: 'bg-gradient-to-b from-slate-900 to-blue-950',
-      renderLogo: () => (
-        <svg viewBox="0 0 240 70" className="h-14 w-auto object-contain" fill="none">
-          <g transform="translate(100, 6) scale(0.9)">
-            <path d="M6 18C16 10 28 14 36 18C28 22 16 26 6 18Z" fill="#0A192F" stroke="#38BDF8" strokeWidth="1.5" />
-            <circle cx="12" cy="17" r="1.5" fill="#38BDF8" />
-            <path d="M34 16L40 12V24L34 20" fill="#38BDF8" />
-          </g>
-          <text x="120" y="44" textAnchor="middle" fill="#FFFFFF" fontFamily="Georgia, serif" fontSize="15" fontWeight="bold" letterSpacing="2">
-            FISH BAR
-          </text>
-          <text x="120" y="58" textAnchor="middle" fill="#38BDF8" fontFamily="sans-serif" fontSize="8" fontWeight="700" letterSpacing="2.5">
-            HALLES SAINT-GÉRY • BRUXELLES
-          </text>
-        </svg>
-      )
+      isDeliveryPhoto: true,
+      photoUrl: '/images/partners/fishbar_box.jpg',
+      logoBg: 'bg-slate-900',
+      badgeStyle: 'bg-black/70 text-sky-200 border-sky-400/30'
+    },
+    {
+      id: 'dolcecoffee',
+      name: 'Dolce Coffee',
+      specialty: 'Specialty coffee, barista & brunch',
+      badge: 'Coffee & Brunch',
+      city: 'Wallonie & Bruxelles',
+      packaging: 'Gobelets café isothermes & boîtes pâtisseries',
+      instagram: '@dolcecoffee__',
+      instagramUrl: 'https://www.instagram.com/dolcecoffee__/',
+      logoUrl: '/images/partners/dolcecoffee.png',
+      logoBg: 'bg-[#F7EEDE] border-b border-amber-200/60',
+      badgeStyle: 'bg-amber-950/10 text-amber-900 border-amber-900/20'
+    },
+    {
+      id: 'breakpoint',
+      name: 'BreakPoint Colonies',
+      specialty: 'Sandwichs artisanaux, bagels & salades',
+      badge: 'Gare Centrale',
+      city: 'Bruxelles (Rue des Colonies)',
+      packaging: 'Sachets sandwichs kraft & barquettes repas',
+      instagram: '@breakpointcolonies',
+      instagramUrl: 'https://www.instagram.com/breakpointcolonies/',
+      logoUrl: '/images/partners/breakpoint.jpg',
+      logoBg: 'bg-white border-b border-slate-100',
+      badgeStyle: 'bg-slate-900/10 text-slate-800 border-slate-300'
+    },
+    {
+      id: 'sinamisu',
+      name: 'Sinamisu',
+      specialty: 'Bar à tiramisu artisanal & dolce italiano',
+      badge: 'Galeries Royales',
+      city: 'Bruxelles (Galeries Saint-Hubert)',
+      packaging: 'Pots à dessert cristal & boîtes traiteur',
+      instagram: '@sinamisu.brussels',
+      instagramUrl: 'https://www.instagram.com/sinamisu.brussels/',
+      logoUrl: '/images/partners/sina_logo.png',
+      logoBg: 'bg-[#FFF7ED] border-b border-orange-200/60',
+      badgeStyle: 'bg-orange-950/10 text-orange-900 border-orange-900/20'
+    },
+    {
+      id: 'claes-stroobants',
+      name: 'Claes Stroobants',
+      specialty: 'Poissonnerie & Traiteur depuis 1960',
+      badge: 'Fournisseur Breveté de la Cour',
+      city: 'Bruxelles (Woluwe & Meise)',
+      packaging: 'Papiers ingraissables & sacs cabas traiteur luxe',
+      instagram: '@claesstroobants',
+      instagramUrl: 'https://www.instagram.com/claesstroobants/',
+      logoUrl: '/images/partners/claes_stroobants.png',
+      logoBg: 'bg-white border-b border-slate-100',
+      badgeStyle: 'bg-amber-950/10 text-amber-900 border-amber-800/20'
     },
     {
       id: 'eatya',
       name: 'EATYA',
-      specialty: 'Organic Essentials & Superfoods',
-      badge: 'Vidya & Habebe Molenbeek',
+      specialty: 'Organic essentials & superfoods',
+      badge: 'Bio & Superfood',
       city: 'Bruxelles (Quai des Charbonnages)',
-      packaging: 'Pochons kraft étanches & sachets scellés',
+      packaging: 'Pochons kraft scellés & sachets doypack étanches',
       instagram: '@eatya.food',
       instagramUrl: 'https://www.instagram.com/eatya.food/',
-      logoBg: 'bg-gradient-to-b from-emerald-950 to-slate-900',
-      renderLogo: () => (
-        <svg viewBox="0 0 220 70" className="h-14 w-auto object-contain" fill="none">
-          <text x="110" y="42" textAnchor="middle" fill="#FFFFFF" fontFamily="'Plus Jakarta Sans', sans-serif" fontSize="30" fontWeight="900" letterSpacing="-1.5">
-            eatya<tspan fill="#34D399">.</tspan>
-          </text>
-          <rect x="55" y="48" width="110" height="1.5" fill="#34D399" rx="0.75" />
-          <text x="110" y="59" textAnchor="middle" fill="#A7F3D0" fontFamily="sans-serif" fontSize="7" fontWeight="700" letterSpacing="2.5">
-            ORGANIC ESSENTIALS • BRUXELLES
-          </text>
-        </svg>
-      )
+      logoUrl: '/images/partners/eatya.png',
+      logoBg: 'bg-emerald-50/70 border-b border-emerald-100',
+      badgeStyle: 'bg-emerald-950/10 text-emerald-900 border-emerald-800/20'
     },
     {
       id: 'wayta',
@@ -100,44 +132,22 @@ export const TrustedBySlider: React.FC = () => {
       packaging: 'Sachets kraft & boîtes empanadas',
       instagram: '@wayta.be',
       instagramUrl: 'https://www.instagram.com/wayta.be/',
-      logoBg: 'bg-gradient-to-b from-amber-950 to-slate-900',
-      renderLogo: () => (
-        <svg viewBox="0 0 220 70" className="h-14 w-auto object-contain" fill="none">
-          <path d="M40 38C40 25 50 16 62 16C64 16 66 17 68 18C58 21 51 30 51 42C51 44 51.2 46 51.6 48C45 46 40 42 40 38Z" fill="#F59E0B" />
-          <circle cx="62" cy="24" r="3" fill="#D97706" />
-          <text x="80" y="40" fill="#FFFFFF" fontFamily="'Plus Jakarta Sans', sans-serif" fontSize="24" fontWeight="900" letterSpacing="2">
-            WAYTA
-          </text>
-          <text x="80" y="52" fill="#FBBF24" fontFamily="sans-serif" fontSize="8" fontWeight="700" letterSpacing="2">
-            EMPANADAS • ANTWERPEN
-          </text>
-        </svg>
-      )
+      logoUrl: '/images/partners/wayta-wordmark.png',
+      logoBg: 'bg-[#FFFBEB] border-b border-amber-100',
+      badgeStyle: 'bg-amber-950/10 text-amber-900 border-amber-800/20'
     },
     {
       id: 'bouliburgers',
       name: 'Bouli Burgers',
       specialty: 'Smash burgers & street food',
-      badge: 'Street Food Gourmet',
+      badge: 'Original Smashburgers',
       city: 'Restaurant & Takeaway',
       packaging: 'Boîtes burgers & étuis à frites',
       instagram: '@bouliburgers',
       instagramUrl: 'https://www.instagram.com/bouliburgers/',
-      logoBg: 'bg-gradient-to-b from-rose-950 to-slate-900',
-      renderLogo: () => (
-        <svg viewBox="0 0 220 70" className="h-14 w-auto object-contain" fill="none">
-          <circle cx="45" cy="35" r="18" fill="#881337" stroke="#F43F5E" strokeWidth="2" />
-          <path d="M35 33C35 27 39 24 45 24C51 24 55 27 55 33H35Z" fill="#FB7185" />
-          <rect x="34" y="35" width="22" height="3" rx="1.5" fill="#FFF1F2" />
-          <path d="M35 40C35 43 39 45 45 45C51 45 55 43 55 40H35Z" fill="#FB7185" />
-          <text x="76" y="36" fill="#FFFFFF" fontFamily="'Plus Jakarta Sans', sans-serif" fontSize="18" fontWeight="900" letterSpacing="1.5">
-            BOULI
-          </text>
-          <text x="76" y="50" fill="#FDA4AF" fontFamily="'Plus Jakarta Sans', sans-serif" fontSize="13" fontWeight="800" letterSpacing="2.5">
-            BURGERS
-          </text>
-        </svg>
-      )
+      logoUrl: '/images/partners/bouliburgers_hd.png',
+      logoBg: 'bg-gradient-to-br from-rose-950 via-slate-900 to-black',
+      badgeStyle: 'bg-rose-950/60 text-rose-200 border-rose-800/40'
     }
   ];
 
@@ -184,15 +194,45 @@ export const TrustedBySlider: React.FC = () => {
               key={`${partner.id}-${idx}`}
               className="w-[310px] sm:w-[350px] shrink-0 rounded-2xl bg-white border border-slate-200/90 hover:border-blue-400 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between overflow-hidden group select-none"
             >
-              {/* Logo Area */}
+              {/* Logo / Photo Area */}
               <div className={`h-28 ${partner.logoBg} relative flex items-center justify-center px-4 overflow-hidden`}>
-                <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:10px_10px]" />
-                
-                <div className="relative z-10 w-full flex items-center justify-center">
-                  {partner.renderLogo()}
-                </div>
+                {partner.isDeliveryPhoto && partner.photoUrl ? (
+                  <>
+                    <img 
+                      src={partner.photoUrl} 
+                      alt={`Emballages livrés ${partner.name}`}
+                      className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" 
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/25 to-transparent" />
+                    <div className="absolute bottom-2.5 left-3 right-3 flex items-center justify-between">
+                      <div className="flex items-center gap-1.5">
+                        <Sparkles className="w-3 h-3 text-amber-400 shrink-0" />
+                        <span className="text-white font-bold text-xs tracking-wide drop-shadow-sm">
+                          Fish Bar Claes Stroobants
+                        </span>
+                      </div>
+                      <span className="bg-blue-600/90 backdrop-blur-sm text-white text-[9px] font-extrabold px-1.5 py-0.5 rounded shadow">
+                        Boîte livrée
+                      </span>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:10px_10px]" />
+                    
+                    <div className="relative z-10 w-full h-full flex items-center justify-center p-3">
+                      {partner.logoUrl && (
+                        <img 
+                          src={partner.logoUrl} 
+                          alt={partner.name}
+                          className="max-h-16 max-w-[220px] w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
+                        />
+                      )}
+                    </div>
+                  </>
+                )}
 
-                <div className="absolute top-2.5 right-2.5 bg-black/40 backdrop-blur-sm px-2 py-0.5 rounded-full border border-white/10 text-[10px] font-medium text-slate-300">
+                <div className={`absolute top-2.5 right-2.5 backdrop-blur-sm px-2 py-0.5 rounded-full border text-[10px] font-medium ${partner.badgeStyle || 'bg-black/40 text-slate-300 border-white/10'}`}>
                   {partner.badge}
                 </div>
               </div>
@@ -208,7 +248,7 @@ export const TrustedBySlider: React.FC = () => {
                       href={partner.instagramUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-slate-50 hover:bg-pink-50 text-slate-500 hover:text-pink-600 border border-slate-200 text-[11px] font-semibold transition-colors"
+                      className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-slate-50 hover:bg-pink-50 text-slate-500 hover:text-pink-600 border border-slate-200 text-[11px] font-semibold transition-colors shrink-0"
                       onClick={(e) => e.stopPropagation()}
                     >
                       <InstagramIcon className="w-3 h-3 text-pink-500" />

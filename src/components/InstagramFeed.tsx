@@ -16,17 +16,17 @@ export const InstagramFeed: React.FC = () => {
   const posts = [
     {
       id: 1,
+      image: '/images/partners/fishbar_box.jpg',
+      title: 'Boîtes street food & papier ingraissable — Fish Bar Claes Stroobants',
+      subtitle: 'Packaging sur-mesure pour homard rolls & seafood aux Halles Saint-Géry',
+      tag: 'Fish Bar Claes Stroobants'
+    },
+    {
+      id: 2,
       image: '/images/burger.jpg',
       title: 'Boîtes burger kraft & papier ingraissable',
       subtitle: 'Pour enseignes de smash burger et street food',
       tag: 'Burger'
-    },
-    {
-      id: 2,
-      image: '/images/poke.jpg',
-      title: 'Saladiers ronds & bowls étanches',
-      subtitle: 'Impression 360° pour poké bars et saladeries',
-      tag: 'Poké Bowls'
     },
     {
       id: 3,
@@ -37,10 +37,10 @@ export const InstagramFeed: React.FC = () => {
     },
     {
       id: 4,
-      image: '/images/hero.jpg',
-      title: 'Sacs cabas kraft & étuis frites',
-      subtitle: 'Gamme complète pour livraison et vente à emporter',
-      tag: 'Takeaway'
+      image: '/images/poke.jpg',
+      title: 'Saladiers ronds & bowls étanches',
+      subtitle: 'Impression 360° pour poké bars et saladeries',
+      tag: 'Poké Bowls'
     }
   ];
 
