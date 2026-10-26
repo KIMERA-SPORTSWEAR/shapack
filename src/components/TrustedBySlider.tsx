@@ -50,7 +50,7 @@ export const TrustedBySlider: React.FC = () => {
       instagramUrl: 'https://www.instagram.com/dolcecoffee__/',
       logoUrl: '/images/partners/dolcecoffee.png',
       logoBg: 'bg-[#140D07]',
-      logoClassName: 'max-w-[270px] scale-[1.38]'
+      logoClassName: 'max-w-[220px] scale-105'
     },
     {
       id: 'breakpoint',
@@ -102,9 +102,9 @@ export const TrustedBySlider: React.FC = () => {
       name: 'Bouli Burgers',
       instagram: '@bouliburgers',
       instagramUrl: 'https://www.instagram.com/bouliburgers/',
-      logoUrl: '/images/partners/bouliburgers_tight.png',
+      logoUrl: '/images/partners/bouliburgers_hd_vector.png',
       logoBg: 'bg-white border-b border-slate-100',
-      logoClassName: 'max-h-24 max-w-[230px] scale-125'
+      logoClassName: 'max-h-20 max-w-[210px]'
     }
   ];
 
