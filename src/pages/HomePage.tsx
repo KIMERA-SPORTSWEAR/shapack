@@ -315,6 +315,100 @@ export const HomePage: React.FC = () => {
         </div>
       </section>
 
+      {/* Real Customer Production Showcase Banner */}
+      <section className="py-16 bg-gradient-to-b from-slate-900 to-slate-950 text-white border-b border-slate-800 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]" />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            
+            {/* Left Description */}
+            <div className="lg:col-span-7 space-y-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 border border-blue-400/30 text-xs font-bold text-blue-300">
+                <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
+                <span>RÉALISATION CLIENT • BRUXELLES</span>
+              </div>
+
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-tight">
+                Boîtes street food sur-mesure <br />
+                <span className="text-blue-400">Fish Bar Claes Stroobants</span>
+              </h2>
+
+              <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-xl">
+                Carton rigide avec barrière ingraissable certifiée contact alimentaire. Conçues sur-mesure pour les lobster rolls et le seafood gourmet servis au comptoir marin des Halles Saint-Géry.
+              </p>
+
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 border-t border-slate-800 text-xs">
+                <div>
+                  <span className="text-slate-400 block text-[11px] font-semibold uppercase">Client</span>
+                  <span className="text-white font-bold text-sm">Fish Bar Claes Stroobants</span>
+                </div>
+                <div>
+                  <span className="text-slate-400 block text-[11px] font-semibold uppercase">Lieu</span>
+                  <span className="text-white font-bold text-sm">Halles Saint-Géry, Bruxelles</span>
+                </div>
+                <div>
+                  <span className="text-slate-400 block text-[11px] font-semibold uppercase">Finitions</span>
+                  <span className="text-white font-bold text-sm">Impression HD & anti-gras</span>
+                </div>
+              </div>
+
+              <div className="pt-2 flex flex-wrap items-center gap-4">
+                <a
+                  href="https://www.instagram.com/fishbar_claesstroobants/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-500 hover:to-purple-500 text-white font-bold text-xs shadow-lg shadow-pink-500/20 transition-all"
+                >
+                  <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+                  </svg>
+                  <span>@fishbar_claesstroobants</span>
+                </a>
+
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-blue-400 hover:text-blue-300 underline underline-offset-4 transition-colors"
+                >
+                  <span>Demander un devis pour votre packaging</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Right Photo */}
+            <div className="lg:col-span-5">
+              <div className="relative rounded-2xl overflow-hidden border border-slate-700/80 shadow-2xl bg-slate-900 group">
+                <img 
+                  src="/images/partners/fishbar_box.jpg" 
+                  alt="Packaging sur-mesure boîte street food Fish Bar Claes Stroobants" 
+                  className="w-full h-[400px] sm:h-[460px] object-cover object-center group-hover:scale-103 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent pointer-events-none" />
+
+                <div className="absolute top-4 left-4 bg-black/70 backdrop-blur-md px-3 py-1.5 rounded-xl border border-white/20 text-xs font-bold text-white shadow-lg flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  <span>Production réelle livrée par SHAPACK</span>
+                </div>
+
+                <div className="absolute bottom-4 left-4 right-4 bg-black/70 backdrop-blur-md px-4 py-3 rounded-xl border border-white/10 text-white flex items-center justify-between">
+                  <div className="text-xs">
+                    <span className="font-bold block">Boîte street food personnalisée</span>
+                    <span className="text-[11px] text-slate-300">Format sur-mesure & couvercle imprimé</span>
+                  </div>
+                  <span className="text-[10px] font-extrabold uppercase bg-blue-600 px-2 py-1 rounded text-white shadow">
+                    Sur-mesure
+                  </span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* Instagram Social Media Area */}
       <InstagramFeed />
 
