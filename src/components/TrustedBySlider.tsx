@@ -39,9 +39,9 @@ export const TrustedBySlider: React.FC = () => {
       name: 'Fish Bar Claes Stroobants',
       instagram: '@fishbar_claesstroobants',
       instagramUrl: 'https://www.instagram.com/fishbar_claesstroobants/',
-      logoUrl: '/images/partners/fishbar_logo_tight.png',
+      logoUrl: '/images/partners/fishbar_logo_hd_clean.png',
       logoBg: 'bg-[#FC6202]',
-      logoClassName: 'max-h-24 max-w-[220px]'
+      logoClassName: 'max-h-24 max-w-[230px]'
     },
     {
       id: 'dolcecoffee',
@@ -49,7 +49,7 @@ export const TrustedBySlider: React.FC = () => {
       instagram: '@dolcecoffee__',
       instagramUrl: 'https://www.instagram.com/dolcecoffee__/',
       logoUrl: '/images/partners/dolcecoffee.png',
-      logoBg: 'bg-[#F7EEDE] border-b border-amber-200/50',
+      logoBg: 'bg-[#140D07]',
       logoClassName: 'max-w-[270px] scale-[1.38]'
     },
     {
@@ -75,9 +75,9 @@ export const TrustedBySlider: React.FC = () => {
       name: 'Claes Stroobants',
       instagram: '@claesstroobants',
       instagramUrl: 'https://www.instagram.com/claesstroobants/',
-      logoUrl: '/images/partners/claes_stroobants.png',
+      logoUrl: '/images/partners/claes_stroobants_tight.png',
       logoBg: 'bg-white border-b border-slate-100',
-      logoClassName: 'max-h-24 max-w-[240px]'
+      logoClassName: 'max-h-24 max-w-[270px] scale-120'
     },
     {
       id: 'eatya',
@@ -103,7 +103,7 @@ export const TrustedBySlider: React.FC = () => {
       instagram: '@bouliburgers',
       instagramUrl: 'https://www.instagram.com/bouliburgers/',
       logoUrl: '/images/partners/bouliburgers_tight.png',
-      logoBg: 'bg-gradient-to-br from-rose-950 via-slate-900 to-black',
+      logoBg: 'bg-white border-b border-slate-100',
       logoClassName: 'max-h-24 max-w-[230px] scale-125'
     }
   ];
