@@ -92,6 +92,9 @@ export const ContactPage: React.FC = () => {
       const result = await response.json();
       if (result.success) {
         setSubmitted(true);
+        if (typeof window !== 'undefined' && window.history) {
+          window.history.pushState(null, '', '/contact?merci=true');
+        }
         trackLeadConversion({
           reference: generatedRef,
           category: selectedTypes.join(', '),
