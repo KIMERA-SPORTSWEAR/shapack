@@ -7,13 +7,18 @@ import { HomePage } from './pages/HomePage';
 import { ProductsPage } from './pages/ProductsPage';
 import { PortfolioPage } from './pages/PortfolioPage';
 import { ContactPage } from './pages/ContactPage';
+import { trackEvent } from './utils/analytics';
 
-// Scroll to top helper on route navigation
-const ScrollToTop: React.FC = () => {
-  const { pathname } = useLocation();
+// Scroll to top & GA4 page tracking helper on route navigation
+const PageTracker: React.FC = () => {
+  const { pathname, search } = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [pathname]);
+    trackEvent('page_view', {
+      page_path: pathname + search,
+      page_title: document.title
+    });
+  }, [pathname, search]);
   return null;
 };
 
@@ -21,7 +26,7 @@ export const App: React.FC = () => {
   return (
     <LanguageProvider>
       <BrowserRouter>
-        <ScrollToTop />
+        <PageTracker />
         <div className="min-h-screen bg-white text-slate-900 flex flex-col font-sans selection:bg-blue-600 selection:text-white">
           <Navbar />
           

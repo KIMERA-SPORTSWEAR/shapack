@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { Phone, Mail, MapPin, Clock, CheckCircle2, Send, Upload, ShieldCheck, Loader2, AlertCircle, ExternalLink } from 'lucide-react';
+import { trackLeadConversion, trackContactClick } from '../utils/analytics';
 
 export const ContactPage: React.FC = () => {
   const { t } = useLanguage();
@@ -91,6 +92,11 @@ export const ContactPage: React.FC = () => {
       const result = await response.json();
       if (result.success) {
         setSubmitted(true);
+        trackLeadConversion({
+          reference: generatedRef,
+          category: selectedTypes.join(', '),
+          companyName: restaurantName
+        });
       } else {
         setErrorMessage(result.message || "Une erreur est survenue lors de l'envoi de votre demande.");
       }
@@ -136,6 +142,7 @@ export const ContactPage: React.FC = () => {
               <div className="space-y-4 text-sm">
                 <a 
                   href="tel:+32498221169" 
+                  onClick={() => trackContactClick('phone')}
                   className="flex items-center gap-3 p-3 rounded-xl bg-white border border-slate-200 hover:border-blue-500 transition-colors"
                 >
                   <div className="w-9 h-9 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
@@ -149,6 +156,7 @@ export const ContactPage: React.FC = () => {
 
                 <a 
                   href="mailto:hello@shapack.be" 
+                  onClick={() => trackContactClick('email')}
                   className="flex items-center gap-3 p-3 rounded-xl bg-white border border-slate-200 hover:border-blue-500 transition-colors"
                 >
                   <div className="w-9 h-9 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
